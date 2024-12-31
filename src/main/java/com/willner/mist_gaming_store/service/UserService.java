@@ -12,6 +12,12 @@ public class UserService {
     private IUserRepository userRepository;
 
     public UserModel createUser(UserModel user) {
+        var existingUser = this.userRepository.findByEmail(user.getEmail());
+        if (existingUser != null){
+            System.out.println("User " + user.getUsername() + " já existe");
+            return null;
+        }
+
         UserModel userCreated = this.userRepository.save(user);
         System.out.println("User " + user.getUsername() + " created");
         return userCreated;
