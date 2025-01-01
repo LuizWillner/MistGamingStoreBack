@@ -1,6 +1,7 @@
 package com.willner.mist_gaming_store.model;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotEmpty;
 import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.annotations.CreationTimestamp;
@@ -18,11 +19,13 @@ public class UserModel {
     private Long id;
 
     @Column(unique = true)
-    // @NotEmpty(message = "O 'Nome' deve ser informado.")
+    @NotEmpty(message = "O 'Email' deve ser informado.")
     private String email;
 
+    @NotEmpty(message = "O 'Username' deve ser informado.")
     private String username;
 
+    @NotEmpty(message = "A 'Senha' deve ser informada.")
     private String password;
 
     @CreationTimestamp
