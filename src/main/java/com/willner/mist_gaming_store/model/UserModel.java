@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.NotEmpty;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 import org.hibernate.annotations.CreationTimestamp;
 
 import java.time.LocalDateTime;
@@ -13,6 +14,7 @@ import java.time.LocalDateTime;
 @Setter  // Anotação do Lombok para gerar automaticamente os métodos setters dos atributos de UserModel
 // @Data // Gera automaticamente tanto os métodos getters quanto os setters dos atributos de UserModel
 @Entity(name = "user")  // Indica que a classe UserModel é uma entidade do banco de dados
+@ToString
 public class UserModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -29,7 +31,7 @@ public class UserModel {
     private String password;
 
     @CreationTimestamp
-    private LocalDateTime created_at;
+    private LocalDateTime createdAt;
 
 //    public UserModel(String email, String username, String password) {
 //        this.email = email;
