@@ -12,14 +12,15 @@ public class UserService {
     private IUserRepository userRepository;
 
     public UserModel createUser(UserModel user) {
+        UserModel userCreated = null;
         var existingUser = this.userRepository.findByEmail(user.getEmail());
-        if (existingUser != null){
-            System.out.println("User " + user.getUsername() + " já existe");
-            return null;
+        if (existingUser == null) {
+            userCreated = this.userRepository.save(user);
         }
-
-        UserModel userCreated = this.userRepository.save(user);
-        System.out.println("User " + user.getUsername() + " created");
         return userCreated;
+    }
+
+    public UserModel login(UserModel user) {
+        return this.userRepository.findByEmailAndPassword(user.getEmail(), user.getPassword());
     }
 }
