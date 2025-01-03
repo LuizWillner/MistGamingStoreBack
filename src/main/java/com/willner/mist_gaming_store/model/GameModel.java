@@ -40,7 +40,8 @@ public class GameModel {  //TODO: Ingresso, Produto
     private LocalDateTime createdAt;
 
     @NotNull(message = "A 'Categoria' deve ser informada.")
-    @ManyToOne(fetch = FetchType.LAZY)
+    // @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne
     @JoinColumn(name = "category_id", nullable = false)  // category_id referencia o nome da coluna NO BANCO
     private CategoryModel category;
 
