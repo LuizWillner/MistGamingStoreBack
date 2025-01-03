@@ -6,19 +6,24 @@ import jakarta.persistence.Entity;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
+import org.hibernate.annotations.CreationTimestamp;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Data
 @NoArgsConstructor
 @ToString
 @Entity(name = "category")
-public class CategoryModel {
+public class CategoryModel {  // TODO: Sessão
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long categoryId;
 
     private String nome;
+
+    @CreationTimestamp
+    private LocalDateTime createdAt;
 
     @JsonIgnore
     @OneToMany (mappedBy = "category", fetch = FetchType.LAZY)  // "category" se referencia ao atributo categoru de GameModel
