@@ -19,7 +19,7 @@ import java.time.LocalDateTime;
 public class GameModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long gameId;
 
     @Column(unique = true)
     @NotEmpty(message = "O 'Nome' do jogo deve ser informado.")
@@ -39,9 +39,10 @@ public class GameModel {
     private LocalDateTime createdAt;
 
     // TODO: ver e entender no de Marina como ela faz os relacionamentos
-//    @NotNull(message = "A 'Categoria' deve ser informada.")
-//    @ManyToOne
-//    private Categoria categoria;
+    @NotNull(message = "A 'Categoria' deve ser informada.")
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "category_id", nullable = false)
+    private CategoryModel category;
 
     public GameModel(String name, String image, String description, BigDecimal price, LocalDate releaseDate) {
         this.name = name;
