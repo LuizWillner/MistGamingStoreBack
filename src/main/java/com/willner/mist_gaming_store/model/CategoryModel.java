@@ -20,7 +20,6 @@ public class CategoryModel {
 
     private String nome;
 
-    // TODO: ver e entender no de Marina como ela faz os relacionamentos
     @JsonIgnore
     @OneToMany (mappedBy = "category", fetch = FetchType.LAZY)  // "category" se referencia ao atributo categoru de GameModel
     private List<GameModel> games;

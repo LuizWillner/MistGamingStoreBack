@@ -38,10 +38,9 @@ public class GameModel {
     @CreationTimestamp
     private LocalDateTime createdAt;
 
-    // TODO: ver e entender no de Marina como ela faz os relacionamentos
     @NotNull(message = "A 'Categoria' deve ser informada.")
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "category_id", nullable = false)
+    @JoinColumn(name = "category_id", nullable = false)  // category_id referencia o nome da coluna NO BANCO
     private CategoryModel category;
 
     public GameModel(String name, String image, String description, BigDecimal price, LocalDate releaseDate) {
