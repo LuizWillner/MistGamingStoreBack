@@ -18,7 +18,7 @@ import java.time.LocalDateTime;
 public class UserModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long userId;
 
     @Column(unique = true)
     @NotEmpty(message = "O 'Email' deve ser informado.")
