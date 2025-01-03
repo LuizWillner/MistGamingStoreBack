@@ -1,6 +1,7 @@
 package com.willner.mist_gaming_store.model;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
 import lombok.Data;
@@ -16,7 +17,7 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @ToString
 @Entity(name = "game")
-public class GameModel {
+public class GameModel {  //TODO: Ingresso, Produto
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long gameId;
@@ -42,6 +43,10 @@ public class GameModel {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "category_id", nullable = false)  // category_id referencia o nome da coluna NO BANCO
     private CategoryModel category;
+
+    @Min(value=0, message = "A 'Quantidade em estoque' deve ser maior ou igual a 0.")
+    @Column(columnDefinition = "int default 0")
+    private int stockQuantity = 0;
 
     public GameModel(String name, String image, String description, BigDecimal price, LocalDate releaseDate) {
         this.name = name;
