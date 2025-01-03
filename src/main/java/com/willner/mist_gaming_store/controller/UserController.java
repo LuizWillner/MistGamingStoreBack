@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 
 
 @RestController
-@RequestMapping("/user")  // http://localhost:8080/teste
+@RequestMapping("/user")  // http://localhost:8080/user
 public class UserController {
 
     @Autowired  // indica ao Spring que ele deve fazer o gerenciamento do ciclo de vida instância
