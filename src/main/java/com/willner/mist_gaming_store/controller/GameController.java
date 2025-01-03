@@ -18,10 +18,15 @@ public class GameController {
     @Autowired
     private CategoryService categoryService;
 
-    @PostMapping("/create")
+    @PostMapping
     public GameModel createGame(@RequestBody GameModel game) {
         CategoryModel category = this.categoryService.findCategoryById(game.getCategory().getCategoryId());
         game.setCategory(category);
         return this.gameService.createGame(game);
+    }
+
+    @PutMapping
+    public GameModel updateGame(@RequestBody GameModel game) {
+        return gameService.updateGame(game);
     }
 }
