@@ -42,6 +42,11 @@ public class GameController {
         return gameService.getGameByName(gameName);
     }
 
+    @GetMapping("category/{categoryId}")         // GET http://localhost:8080/game/category/2
+    public List<GameModel> getGamesByCategoryId(@PathVariable("categoryId") Long categoryId) {
+        return gameService.getGamesByCategoryId(categoryId);
+    }
+
     @PutMapping  // PUT http://localhost:8080/game
     public GameModel updateGame(@RequestBody GameModel game) {
         return gameService.updateGame(game);

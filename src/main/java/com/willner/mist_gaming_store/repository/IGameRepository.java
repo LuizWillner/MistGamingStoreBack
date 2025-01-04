@@ -14,4 +14,7 @@ public interface IGameRepository extends JpaRepository<GameModel, Long> {
 
     @Query("select g from game g where g.name = :gameName")
     GameModel findByName(String gameName);
+
+    @Query("select g from game g where g.category.categoryId = :categoryId")
+    List<GameModel> findByCategoryId(Long categoryId);
 }

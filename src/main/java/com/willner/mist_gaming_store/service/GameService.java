@@ -28,6 +28,10 @@ public class GameService {
         return gameRepository.findByName(gameName);
     }
 
+    public List<GameModel> getGamesByCategoryId(Long categoryId) {
+        return gameRepository.findByCategoryId(categoryId);
+    }
+
     public GameModel findGameById(Long gameId) {
         return this.gameRepository.findById(gameId)
                 .orElseThrow(
