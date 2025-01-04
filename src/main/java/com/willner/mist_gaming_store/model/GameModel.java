@@ -28,8 +28,12 @@ public class GameModel {  //TODO: Ingresso, Produto
 
     private String image;
 
+    @Column(length = 1000)
     @NotEmpty(message = "A 'Descrição' deve ser informada.")
     private String description;
+
+    private String developer;
+    private String publisher;
 
     @NotNull(message = "O 'Preço' deve ser informado.")
     private BigDecimal price;
