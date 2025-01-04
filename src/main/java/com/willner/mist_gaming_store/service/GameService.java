@@ -24,6 +24,10 @@ public class GameService {
         return gameRepository.findAllGames();
     }
 
+    public GameModel getGameByName(String gameName) {
+        return gameRepository.findByName(gameName);
+    }
+
     public GameModel findGameById(Long gameId) {
         return this.gameRepository.findById(gameId)
                 .orElseThrow(

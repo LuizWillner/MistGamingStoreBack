@@ -11,4 +11,7 @@ import java.util.List;
 public interface IGameRepository extends JpaRepository<GameModel, Long> {
     @Query("select g from game g")
     List<GameModel> findAllGames();
+
+    @Query("select g from game g where g.name = :gameName")
+    GameModel findByName(String gameName);
 }

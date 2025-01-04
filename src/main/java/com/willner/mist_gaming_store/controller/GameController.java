@@ -37,6 +37,11 @@ public class GameController {
         return gameService.findGameById(gameId);
     }
 
+    @GetMapping("title/{gameName}")         // GET http://localhost:8080/game/title/Baldur's Gate 3
+    public GameModel getGameByName(@PathVariable("gameName") String gameName) {
+        return gameService.getGameByName(gameName);
+    }
+
     @PutMapping  // PUT http://localhost:8080/game
     public GameModel updateGame(@RequestBody GameModel game) {
         return gameService.updateGame(game);
