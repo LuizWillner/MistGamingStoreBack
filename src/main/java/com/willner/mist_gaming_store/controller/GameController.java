@@ -26,7 +26,7 @@ public class GameController {
     }
 
     @GetMapping("{gameId}")  // GET http://localhost:8080/game/1
-    public GameModel recuperarIngressoPorId(@PathVariable("gameId") Long gameId) {
+    public GameModel getGameById(@PathVariable("gameId") Long gameId) {
         return gameService.findGameById(gameId);
     }
 
