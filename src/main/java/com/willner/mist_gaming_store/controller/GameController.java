@@ -57,6 +57,23 @@ public class GameController {
         return gameService.getGamesByCategoryName(categoryName);
     }
 
+    @GetMapping("pageable/category/")   // GET http://localhost:8080/game/pageable?page=0&size=5&categoryName=Ação e Aventura
+    public ResultadoPaginado<GameModel> getGamesPageableByCategoryId(
+            @RequestParam(name= "page", defaultValue = "0") int page,
+            @RequestParam(name= "size", defaultValue = "3") int size,
+            @RequestParam(name="categoryId", defaultValue = "") int categoryId
+    ) {
+        Pageable pageable = PageRequest.of(page, size);
+        Page<GameModel> paginaDeProduto = gameService.getGamesPageableByCategoryId(categoryId, pageable);
+        ResultadoPaginado<GameModel> resultadoPaginado = new ResultadoPaginado<>(
+                paginaDeProduto.getTotalElements(),
+                paginaDeProduto.getTotalPages(),
+                paginaDeProduto.getNumber(),
+                paginaDeProduto.getContent()
+        );
+        return resultadoPaginado;
+    }
+
     @GetMapping("pageable/category/name")   // GET http://localhost:8080/game/pageable?page=0&size=5&categoryName=Ação e Aventura
     public ResultadoPaginado<GameModel> getGamesPageableByCategoryName(
             @RequestParam(name= "page", defaultValue = "0") int page,
