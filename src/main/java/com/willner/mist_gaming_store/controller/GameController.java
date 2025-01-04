@@ -4,7 +4,11 @@ import com.willner.mist_gaming_store.model.CategoryModel;
 import com.willner.mist_gaming_store.model.GameModel;
 import com.willner.mist_gaming_store.service.CategoryService;
 import com.willner.mist_gaming_store.service.GameService;
+import com.willner.mist_gaming_store.util.ResultadoPaginado;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -50,6 +54,23 @@ public class GameController {
     @GetMapping("category/name/{categoryName}")         // GET http://localhost:8080/game/category/name/Coop
     public List<GameModel> getGamesByCategoryName(@PathVariable("categoryName") String categoryName) {
         return gameService.getGamesByCategoryName(categoryName);
+    }
+
+    @GetMapping("pageable/category")   // GET http://localhost:8080/game/pageable?page=0&size=5
+    public ResultadoPaginado<GameModel> getGamesPageableByCategory(
+            @RequestParam(name= "page", defaultValue = "0") int page,
+            @RequestParam(name= "size", defaultValue = "3") int size,
+            @RequestParam(name="categoryName", defaultValue = "") String categoryName
+    ) {
+        Pageable pageable = PageRequest.of(page, size);
+        Page<GameModel> paginaDeProduto = gameService.getGamesPageableByCategory(categoryName, pageable);
+        ResultadoPaginado<GameModel> resultadoPaginado = new ResultadoPaginado<>(
+            paginaDeProduto.getTotalElements(),
+            paginaDeProduto.getTotalPages(),
+            paginaDeProduto.getNumber(),
+            paginaDeProduto.getContent()
+        );
+        return resultadoPaginado;
     }
 
     @PutMapping  // PUT http://localhost:8080/game

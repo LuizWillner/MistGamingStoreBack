@@ -3,6 +3,8 @@ package com.willner.mist_gaming_store.repository;
 import com.willner.mist_gaming_store.model.GameModel;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 
 import java.util.List;
 
@@ -17,4 +19,10 @@ public interface IGameRepository extends JpaRepository<GameModel, Long> {
 
     @Query("select g from game g where g.category.categoryId = :categoryId")
     List<GameModel> findByCategoryId(Long categoryId);
+
+    @Query(
+            value = "SELECT g FROM game g LEFT JOIN g.category c WHERE c.name LIKE %:categoryName%",
+            countQuery = "SELECT COUNT(g) FROM game g LEFT JOIN g.category c WHERE c.name LIKE %:categoryName%"
+    )
+    Page<GameModel> findGamesPageableByCategory(String categoryName, Pageable pageable);
 }

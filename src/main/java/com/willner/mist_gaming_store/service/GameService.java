@@ -8,6 +8,8 @@ import jakarta.persistence.EntityNotFoundException;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 
 import java.util.List;
 
@@ -39,6 +41,10 @@ public class GameService {
     public List<GameModel> getGamesByCategoryName(String categoryName) {
         CategoryModel category = this.categoryService.getCategoryByName(categoryName);
         return gameRepository.findByCategoryId(category.getCategoryId());
+    }
+
+    public Page<GameModel> getGamesPageableByCategory(String categoryName, Pageable pageable) {
+        return gameRepository.findGamesPageableByCategory(categoryName, pageable);
     }
 
     public GameModel findGameById(Long gameId) {
