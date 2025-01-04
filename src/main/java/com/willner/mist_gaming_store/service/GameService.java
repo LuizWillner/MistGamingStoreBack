@@ -21,7 +21,7 @@ public class GameService {
     public GameModel findGameById(Long gameId) {
         return this.gameRepository.findById(gameId)
                 .orElseThrow(
-                        () -> new EntityNotFoundException("Category não encontrada com id: " + gameId)
+                        () -> new EntityNotFoundException("Game não encontrado com id: " + gameId)
                 );
     }
 
@@ -40,5 +40,9 @@ public class GameService {
         else {
             throw new TransientEntityException("Tentando alterar um objeto transiente.");
         }
+    }
+
+    public void deleteGame(Long id) {
+        gameRepository.deleteById(id);
     }
 }

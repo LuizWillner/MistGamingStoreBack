@@ -18,15 +18,22 @@ public class GameController {
     @Autowired
     private CategoryService categoryService;
 
-    @PostMapping
+    @PostMapping  // POST http://localhost:8080/game
     public GameModel createGame(@RequestBody GameModel game) {
         CategoryModel category = this.categoryService.findCategoryById(game.getCategory().getCategoryId());
         game.setCategory(category);
         return this.gameService.createGame(game);
     }
 
-    @PutMapping
+    @PutMapping  // PUT http://localhost:8080/game
     public GameModel updateGame(@RequestBody GameModel game) {
         return gameService.updateGame(game);
+    }
+
+    @DeleteMapping("{gameId}")  // DELETE http://localhost:8080/game/1
+    public GameModel deleteGame(@PathVariable("gameId") Long gameId) {
+        GameModel game = gameService.findGameById(gameId);
+        gameService.deleteGame(gameId);
+        return game;
     }
 }
