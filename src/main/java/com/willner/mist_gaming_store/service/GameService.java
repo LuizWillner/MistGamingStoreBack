@@ -1,6 +1,7 @@
 package com.willner.mist_gaming_store.service;
 
 import com.willner.mist_gaming_store.exception.TransientEntityException;
+import com.willner.mist_gaming_store.model.CategoryModel;
 import com.willner.mist_gaming_store.model.GameModel;
 import com.willner.mist_gaming_store.repository.IGameRepository;
 import jakarta.persistence.EntityNotFoundException;
@@ -16,6 +17,9 @@ public class GameService {
     @Autowired
     private IGameRepository gameRepository;
 
+    @Autowired
+    private CategoryService categoryService;
+
     public GameModel createGame(GameModel game) {
         return this.gameRepository.save(game);
     }
@@ -30,6 +34,11 @@ public class GameService {
 
     public List<GameModel> getGamesByCategoryId(Long categoryId) {
         return gameRepository.findByCategoryId(categoryId);
+    }
+
+    public List<GameModel> getGamesByCategoryName(String categoryName) {
+        CategoryModel category = this.categoryService.getCategoryByName(categoryName);
+        return gameRepository.findByCategoryId(category.getCategoryId());
     }
 
     public GameModel findGameById(Long gameId) {

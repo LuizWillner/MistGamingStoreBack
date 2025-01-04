@@ -6,4 +6,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 // Primeiro param do Generator <> é o tipo da classe que o repository representa e o segundo é o tipo do ID
 public interface ICategoryRepository extends JpaRepository<CategoryModel, Long> {
+
+    // Spring automaticamente entende a semântica do nome "findByName" e cria a query adequadamente
+    CategoryModel findByName(String categoryName);
 }

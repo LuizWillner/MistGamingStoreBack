@@ -19,4 +19,8 @@ public class CategoryService {
                         () -> new EntityNotFoundException("Category não encontrada com id: " + categoryId)
                 );
     }
+
+    public CategoryModel getCategoryByName(String categoryName) {
+        return this.categoryRepository.findByName(categoryName);
+    }
 }

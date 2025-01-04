@@ -42,9 +42,14 @@ public class GameController {
         return gameService.getGameByName(gameName);
     }
 
-    @GetMapping("category/{categoryId}")         // GET http://localhost:8080/game/category/2
+    @GetMapping("category/{categoryId}")         // GET http://localhost:8080/game/category/3
     public List<GameModel> getGamesByCategoryId(@PathVariable("categoryId") Long categoryId) {
         return gameService.getGamesByCategoryId(categoryId);
+    }
+
+    @GetMapping("category/name/{categoryName}")         // GET http://localhost:8080/game/category/name/Coop
+    public List<GameModel> getGamesByCategoryName(@PathVariable("categoryName") String categoryName) {
+        return gameService.getGamesByCategoryName(categoryName);
     }
 
     @PutMapping  // PUT http://localhost:8080/game

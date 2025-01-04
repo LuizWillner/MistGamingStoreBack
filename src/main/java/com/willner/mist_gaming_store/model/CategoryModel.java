@@ -20,7 +20,7 @@ public class CategoryModel {  // TODO: Sessão
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long categoryId;
 
-    private String nome;
+    private String name;
 
     @CreationTimestamp
     private LocalDateTime createdAt;
@@ -29,7 +29,7 @@ public class CategoryModel {  // TODO: Sessão
     @OneToMany (mappedBy = "category", fetch = FetchType.LAZY)  // "category" se referencia ao atributo categoru de GameModel
     private List<GameModel> games;
 
-    public CategoryModel(String nome) {
-        this.nome = nome;
+    public CategoryModel(String name) {
+        this.name = name;
     }
 }
