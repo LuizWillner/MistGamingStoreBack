@@ -25,6 +25,11 @@ public class GameController {
         return this.gameService.createGame(game);
     }
 
+    @GetMapping("{gameId}")  // GET http://localhost:8080/game/1
+    public GameModel recuperarIngressoPorId(@PathVariable("gameId") Long gameId) {
+        return gameService.findGameById(gameId);
+    }
+
     @PutMapping  // PUT http://localhost:8080/game
     public GameModel updateGame(@RequestBody GameModel game) {
         return gameService.updateGame(game);
