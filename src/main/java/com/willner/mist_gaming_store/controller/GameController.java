@@ -11,6 +11,7 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDate;
 import java.util.List;
 
 
@@ -56,7 +57,7 @@ public class GameController {
         return gameService.getGamesByCategoryName(categoryName);
     }
 
-    @GetMapping("pageable/category")   // GET http://localhost:8080/game/pageable?page=0&size=5
+    @GetMapping("pageable/category")   // GET http://localhost:8080/game/pageable?page=0&size=5&categoryName=Ação e Aventura
     public ResultadoPaginado<GameModel> getGamesPageableByCategory(
             @RequestParam(name= "page", defaultValue = "0") int page,
             @RequestParam(name= "size", defaultValue = "3") int size,
@@ -69,6 +70,24 @@ public class GameController {
             paginaDeProduto.getTotalPages(),
             paginaDeProduto.getNumber(),
             paginaDeProduto.getContent()
+        );
+        return resultadoPaginado;
+    }
+
+    @GetMapping("pageable/releaseDate")   // GET http://localhost:8080/game/pageable?page=0&size=5
+    public ResultadoPaginado<GameModel> getGamesPageableByReleaseDate(
+            @RequestParam(name= "page", defaultValue = "0") int page,
+            @RequestParam(name= "size", defaultValue = "3") int size,
+            @RequestParam(name="dateMin", defaultValue = "") LocalDate dateMin,
+            @RequestParam(name="dateMax", defaultValue = "") LocalDate dateMax
+    ) {
+        Pageable pageable = PageRequest.of(page, size);
+        Page<GameModel> paginaDeProduto = gameService.getGamesPageableByReleaseDate(dateMin, dateMax, pageable);
+        ResultadoPaginado<GameModel> resultadoPaginado = new ResultadoPaginado<>(
+                paginaDeProduto.getTotalElements(),
+                paginaDeProduto.getTotalPages(),
+                paginaDeProduto.getNumber(),
+                paginaDeProduto.getContent()
         );
         return resultadoPaginado;
     }

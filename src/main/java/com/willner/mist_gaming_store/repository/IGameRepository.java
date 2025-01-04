@@ -6,6 +6,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
+import java.time.LocalDate;
 import java.util.List;
 
 
@@ -21,8 +22,14 @@ public interface IGameRepository extends JpaRepository<GameModel, Long> {
     List<GameModel> findByCategoryId(Long categoryId);
 
     @Query(
-            value = "SELECT g FROM game g LEFT JOIN g.category c WHERE c.name LIKE %:categoryName%",
+            value = "SELECT g FROM game g LEFT JOIN FETCH g.category c WHERE c.name LIKE %:categoryName%",
             countQuery = "SELECT COUNT(g) FROM game g LEFT JOIN g.category c WHERE c.name LIKE %:categoryName%"
     )
     Page<GameModel> findGamesPageableByCategory(String categoryName, Pageable pageable);
+
+    @Query(
+            value = "SELECT g FROM game g WHERE g.releaseDate BETWEEN :dateMin AND :dateMax ORDER BY g.releaseDate DESC",
+            countQuery = "SELECT count(g) FROM game g WHERE g.releaseDate BETWEEN :dateMin AND :dateMax"
+    )
+    Page<GameModel> findGamesPageableByCReleaseDate(LocalDate dateMin, LocalDate dateMax, Pageable pageable);
 }

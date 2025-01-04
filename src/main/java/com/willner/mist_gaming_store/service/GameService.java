@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
+import java.time.LocalDate;
 import java.util.List;
 
 
@@ -45,6 +46,17 @@ public class GameService {
 
     public Page<GameModel> getGamesPageableByCategory(String categoryName, Pageable pageable) {
         return gameRepository.findGamesPageableByCategory(categoryName, pageable);
+    }
+
+    public Page<GameModel> getGamesPageableByReleaseDate(LocalDate dateMin, LocalDate dateMax, Pageable pageable) {
+        if (dateMin == null && dateMax == null) {
+            return gameRepository.findGamesPageableByCategory("", pageable);
+        } else if (dateMin == null) {
+            dateMin = LocalDate.MIN;
+        } else if (dateMax == null) {
+            dateMax = LocalDate.MAX;
+        }
+        return gameRepository.findGamesPageableByCReleaseDate(dateMin, dateMax, pageable);
     }
 
     public GameModel findGameById(Long gameId) {
