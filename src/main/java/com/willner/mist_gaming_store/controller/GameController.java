@@ -58,13 +58,13 @@ public class GameController {
     }
 
     @GetMapping("pageable/category")   // GET http://localhost:8080/game/pageable?page=0&size=5&categoryName=Ação e Aventura
-    public ResultadoPaginado<GameModel> getGamesPageableByCategory(
+    public ResultadoPaginado<GameModel> getGamesPageableByCategoryName(
             @RequestParam(name= "page", defaultValue = "0") int page,
             @RequestParam(name= "size", defaultValue = "3") int size,
             @RequestParam(name="categoryName", defaultValue = "") String categoryName
     ) {
         Pageable pageable = PageRequest.of(page, size);
-        Page<GameModel> paginaDeProduto = gameService.getGamesPageableByCategory(categoryName, pageable);
+        Page<GameModel> paginaDeProduto = gameService.getGamesPageableByCategoryName(categoryName, pageable);
         ResultadoPaginado<GameModel> resultadoPaginado = new ResultadoPaginado<>(
             paginaDeProduto.getTotalElements(),
             paginaDeProduto.getTotalPages(),

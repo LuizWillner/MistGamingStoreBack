@@ -44,13 +44,13 @@ public class GameService {
         return gameRepository.findByCategoryId(category.getCategoryId());
     }
 
-    public Page<GameModel> getGamesPageableByCategory(String categoryName, Pageable pageable) {
-        return gameRepository.findGamesPageableByCategory(categoryName, pageable);
+    public Page<GameModel> getGamesPageableByCategoryName(String categoryName, Pageable pageable) {
+        return gameRepository.findGamesPageableByCategoryName(categoryName, pageable);
     }
 
     public Page<GameModel> getGamesPageableByReleaseDate(LocalDate dateMin, LocalDate dateMax, Pageable pageable) {
         if (dateMin == null && dateMax == null) {
-            return gameRepository.findGamesPageableByCategory("", pageable);
+            return gameRepository.findGamesPageableByCategoryName("", pageable);
         } else if (dateMin == null) {
             dateMin = LocalDate.MIN;
         } else if (dateMax == null) {
