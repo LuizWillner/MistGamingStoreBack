@@ -76,10 +76,11 @@ public class GameService {
     public GameModel updateGame(GameModel game) {
         if (game.getGameId() != null) {
 //          produtoRepository.recuperarProdutoPorIdComLock(produto.getId())
-            gameRepository.findById(game.getGameId())
+            GameModel oldGame = gameRepository.findById(game.getGameId())
                     .orElseThrow(
                             () -> new EntityNotFoundException("Game não encontrado com id " + game.getGameId())
                     );
+            game.setCreatedAt(oldGame.getCreatedAt());
             return gameRepository.save(game);
         }
         else {
