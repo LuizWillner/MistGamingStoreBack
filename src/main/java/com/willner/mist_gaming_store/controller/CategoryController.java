@@ -23,4 +23,11 @@ public class CategoryController {
     public CategoryModel updateCategory(@RequestBody CategoryModel category) {
         return this.categoryService.updateCategory(category);
     }
+
+    @DeleteMapping("{categoryId}")  // DELETE http://localhost:8080/category/1
+    public CategoryModel deleteCategory(@PathVariable("categoryId") Long categoryId) {
+        CategoryModel category = categoryService.findCategoryById(categoryId);
+        categoryService.deleteCategory(categoryId);
+        return category;
+    }
 }

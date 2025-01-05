@@ -48,4 +48,8 @@ public class CategoryService {
             throw new TransientEntityException("Tentando alterar um objeto transiente.");
         }
     }
+
+    public void deleteCategory(Long categoryId) {
+        categoryRepository.deleteById(categoryId);
+    }
 }
