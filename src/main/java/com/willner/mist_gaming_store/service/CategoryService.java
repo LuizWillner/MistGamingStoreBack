@@ -9,6 +9,8 @@ import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 
 @Service
 public class CategoryService {
@@ -18,6 +20,10 @@ public class CategoryService {
 
     public CategoryModel createCategory(CategoryModel category) {
         return this.categoryRepository.save(category);
+    }
+
+    public List<CategoryModel> getAllCategories() {
+        return categoryRepository.findAllCategories();
     }
 
     public CategoryModel findCategoryById(Long categoryId) {
