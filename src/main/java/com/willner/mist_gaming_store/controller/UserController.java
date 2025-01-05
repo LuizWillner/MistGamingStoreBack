@@ -1,5 +1,6 @@
 package com.willner.mist_gaming_store.controller;
 
+import com.willner.mist_gaming_store.model.GameModel;
 import com.willner.mist_gaming_store.model.UserModel;
 import com.willner.mist_gaming_store.service.UserService;
 import com.willner.mist_gaming_store.util.TokenResponse;
@@ -34,5 +35,10 @@ public class UserController {
         } else {
             return new TokenResponse("");
         }
+    }
+
+    @PutMapping  // PUT http://localhost:8080/user
+    public UserModel updateUser(@RequestBody UserModel user) {
+        return userService.updateUser(user);
     }
 }

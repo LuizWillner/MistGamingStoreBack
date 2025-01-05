@@ -3,6 +3,7 @@ package com.willner.mist_gaming_store.model;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotEmpty;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 import org.hibernate.annotations.CreationTimestamp;
@@ -15,6 +16,7 @@ import java.time.LocalDateTime;
 // @Data // Gera automaticamente tanto os métodos getters quanto os setters dos atributos de UserModel
 @Entity(name = "user")  // Indica que a classe UserModel é uma entidade do banco de dados
 @ToString
+@NoArgsConstructor
 public class UserModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -33,10 +35,10 @@ public class UserModel {
     @CreationTimestamp
     private LocalDateTime createdAt;
 
-//    public UserModel(String email, String username, String password) {
-//        this.email = email;
-//        this.username = username;
-//        this.password = password;
-//    }
+    public UserModel(String email, String username, String password) {
+        this.email = email;
+        this.username = username;
+        this.password = password;
+    }
 
 }
