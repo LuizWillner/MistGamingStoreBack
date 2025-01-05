@@ -53,11 +53,25 @@ public class GameModel {  //TODO: Ingresso, Produto
     @Column(columnDefinition = "int default 0")
     private int stockQuantity = 0;
 
-    public GameModel(String name, String image, String description, BigDecimal price, LocalDate releaseDate) {
+    public GameModel(
+            String name,
+            String image,
+            String description,
+            String developer,
+            String publisher,
+            BigDecimal price,
+            LocalDate releaseDate,
+            int stockQuantity,
+            CategoryModel category
+    ) {
         this.name = name;
         this.image = image;
         this.description = description;
+        this.developer = developer;
+        this.publisher = publisher;
         this.price = price;
         this.releaseDate = releaseDate;
+        this.stockQuantity = stockQuantity;
+        this.category = category;
     }
 }
