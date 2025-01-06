@@ -13,6 +13,14 @@ public class CartController {
     @Autowired
     private CartService cartService;
 
+    @GetMapping  // GET http://localhost:8080/user/cart?cartId=1&userId=1
+    public CartModel getCartByIdFromUser(
+            @RequestParam(name = "cartId") Long cartId,
+            @RequestParam(name = "userId") Long userId
+    ) {
+        return cartService.getCartByIdFromUser(cartId, userId);
+    }
+
     @DeleteMapping  // DELETE http://localhost:8080/user/cart?cartId=1&userId=1
     public CartModel deleteCart(
             @RequestParam(name = "cartId") Long cartId,
