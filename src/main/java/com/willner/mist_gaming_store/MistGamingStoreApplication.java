@@ -19,7 +19,7 @@ public class MistGamingStoreApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		System.out.println("Aplicação rodando...");
 		dbUtils.populateDB();
+		System.out.println("Aplicação rodando e pronta para uso...");
 	}
 }
