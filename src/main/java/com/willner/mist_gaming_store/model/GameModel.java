@@ -1,5 +1,6 @@
 package com.willner.mist_gaming_store.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotEmpty;
@@ -12,6 +13,7 @@ import org.hibernate.annotations.CreationTimestamp;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Data
 @NoArgsConstructor
@@ -40,6 +42,10 @@ public class GameModel {  //TODO: Ingresso, Produto
 
     private LocalDate releaseDate;
 
+    @Min(value=0, message = "A 'Quantidade em estoque' deve ser maior ou igual a 0.")
+    @Column(columnDefinition = "int default 0")
+    private int stockQuantity = 0;
+
     @CreationTimestamp
     private LocalDateTime createdAt;
 
@@ -49,9 +55,9 @@ public class GameModel {  //TODO: Ingresso, Produto
     @JoinColumn(name = "category_id", nullable = false)  // category_id referencia o nome da coluna NO BANCO
     private CategoryModel category;
 
-    @Min(value=0, message = "A 'Quantidade em estoque' deve ser maior ou igual a 0.")
-    @Column(columnDefinition = "int default 0")
-    private int stockQuantity = 0;
+    @JsonIgnore
+    @OneToMany(mappedBy = "game", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private List<CartItemModel> cartItens;
 
     public GameModel(
             String name,

@@ -1,5 +1,6 @@
 package com.willner.mist_gaming_store.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotEmpty;
 import lombok.Getter;
@@ -34,6 +35,10 @@ public class UserModel {
 
     @CreationTimestamp
     private LocalDateTime createdAt;
+
+    @OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
+    @JsonIgnore
+    private CartModel cart;
 
     public UserModel(String email, String username, String password) {
         this.email = email;
