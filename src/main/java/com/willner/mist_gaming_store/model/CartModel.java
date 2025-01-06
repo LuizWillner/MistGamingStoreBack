@@ -38,7 +38,7 @@ public class CartModel {
 
     public Double getTotalPrice() {
         return this.cartItems.stream()
-                .mapToDouble(CartItemModel::getItemPrice)
+                .mapToDouble(CartItemModel::getCartItemPrice)
                 .sum();
     }
 

@@ -48,7 +48,7 @@ public class CartItemModel {
         this.game = game;
     }
 
-    public Double getItemPrice() {
+    public Double getCartItemPrice() {
         BigDecimal bigDecimalItemPrice = BigDecimal.valueOf(this.quantity).multiply(this.game.getPrice());
         return bigDecimalItemPrice.doubleValue();
     }
