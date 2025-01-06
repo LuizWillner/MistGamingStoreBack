@@ -1,5 +1,6 @@
 package com.willner.mist_gaming_store.controller;
 
+import com.willner.mist_gaming_store.exception.InsuficientStockException;
 import com.willner.mist_gaming_store.model.CartModel;
 import com.willner.mist_gaming_store.model.GameModel;
 import com.willner.mist_gaming_store.service.CartItemService;
@@ -45,7 +46,9 @@ public class CartController {
         cart.getCartItems().forEach(cartItem -> {
             GameModel game = cartItem.getGame();
             if (game.getStockQuantity() < cartItem.getQuantity()) {
-                throw new RuntimeException("Quantidade insuficiente em estoque para o jogo " + game.getName());
+                throw new InsuficientStockException(
+                        "Quantidade insuficiente em estoque para o jogo " + game.getName()
+                );
             }
             game.setStockQuantity(game.getStockQuantity() - cartItem.getQuantity());
             gameService.updateGame(game);
