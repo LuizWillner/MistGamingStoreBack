@@ -21,6 +21,16 @@ public class CartController {
         return cartService.getCartByIdFromUser(cartId, userId);
     }
 
+    @GetMapping("/total")  // GET http://localhost:8080/user/cart/total?cartId=1&userId=1
+    public Double getTotalPriceFromCart(
+            @RequestParam(name = "cartId") Long cartId,
+            @RequestParam(name = "userId") Long userId
+    ) {
+        return cartService.getCartByIdFromUser(cartId, userId).getTotalPrice();
+    }
+
+
+
     @DeleteMapping  // DELETE http://localhost:8080/user/cart?cartId=1&userId=1
     public CartModel deleteCartByIdFromUser(
             @RequestParam(name = "cartId") Long cartId,

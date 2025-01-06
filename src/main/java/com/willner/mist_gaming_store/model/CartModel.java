@@ -36,4 +36,10 @@ public class CartModel {
         this.user = user;
     }
 
+    public Double getTotalPrice() {
+        return this.cartItems.stream()
+                .mapToDouble(CartItemModel::getItemPrice)
+                .sum();
+    }
+
 }

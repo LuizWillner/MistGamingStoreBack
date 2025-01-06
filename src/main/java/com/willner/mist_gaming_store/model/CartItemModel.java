@@ -9,6 +9,7 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 import org.hibernate.annotations.CreationTimestamp;
 
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 
@@ -45,5 +46,10 @@ public class CartItemModel {
         this.quantity = quantity;
         this.cart = cart;
         this.game = game;
+    }
+
+    public Double getItemPrice() {
+        BigDecimal bigDecimalItemPrice = BigDecimal.valueOf(this.quantity).multiply(this.game.getPrice());
+        return bigDecimalItemPrice.doubleValue();
     }
 }
