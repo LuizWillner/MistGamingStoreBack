@@ -1,11 +1,10 @@
 package com.willner.mist_gaming_store.util;
 
+import com.willner.mist_gaming_store.model.CartModel;
 import com.willner.mist_gaming_store.model.CategoryModel;
 import com.willner.mist_gaming_store.model.GameModel;
 import com.willner.mist_gaming_store.model.UserModel;
-import com.willner.mist_gaming_store.repository.ICategoryRepository;
-import com.willner.mist_gaming_store.repository.IGameRepository;
-import com.willner.mist_gaming_store.repository.IUserRepository;
+import com.willner.mist_gaming_store.repository.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -25,9 +24,18 @@ public class DBUtils {
     @Autowired
     ICategoryRepository categoryRepository;
 
+    @Autowired
+    ICartRepository cartRepository;
+
+    @Autowired
+    ICartItemRepository cartItemRepository;
+
     public void populateDB() {
         UserModel user = new UserModel("admin@email.com", "Admin", "senha");
         this.userRepository.save(user);
+
+        CartModel cart = new CartModel(user);
+        this.cartRepository.save(cart);
 
         CategoryModel catRpgAcao = new CategoryModel("RPG Ação");
         this.categoryRepository.save(catRpgAcao);

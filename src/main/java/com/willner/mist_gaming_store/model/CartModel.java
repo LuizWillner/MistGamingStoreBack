@@ -32,4 +32,8 @@ public class CartModel {
     @JoinColumn(name = "user_id", nullable = false)
     private UserModel user;
 
+    public CartModel(UserModel user) {
+        this.user = user;
+    }
+
 }
