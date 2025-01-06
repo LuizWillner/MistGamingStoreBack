@@ -20,6 +20,12 @@ public class CartItemService {
         return this.cartItemRepository.save(cartItem);
     }
 
+    public CartItemModel getCartItemByIdFromCart(Long cartItemId, Long cartId) {
+        return cartItemRepository.findByIdAndCartId(cartItemId, cartId)
+                .orElseThrow(() -> new EntityNotFoundException(
+                        "Item de carrinho número " + cartItemId + " não encontrado no carrinho."));
+    }
+
     @Transactional
     public CartItemModel updateCartItem(CartItemModel cartItem) {
         if (cartItem.getCartItemId() != null) {
@@ -35,5 +41,9 @@ public class CartItemService {
         else {
             throw new TransientEntityException("Tentando alterar um objeto transiente.");
         }
+    }
+
+    public void deleteCartItem(Long cartItem) {
+        cartItemRepository.deleteById(cartItem);
     }
 }
