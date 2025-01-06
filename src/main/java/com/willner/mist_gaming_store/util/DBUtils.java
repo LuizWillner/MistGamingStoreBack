@@ -47,7 +47,7 @@ public class DBUtils {
         GameModel game = new GameModel(
                 "Baldur's Gate 3",
                 "PATH",
-                "Baldur's Gate III é um jogo eletrônico de RPG desenvolvido e publicado pela Larian Studios. É o terceiro jogo principal da série Baldur's Gate, que é baseada no sistema de RPG de mesa Dungeons & Dragons, dentro do cenário de Forgotten Realms",
+                "Baldur's Gate III é um RPG desenvolvido e publicado pela Larian Studios. É o terceiro jogo principal da série Baldur's Gate, que é baseada no sistema de RPG de mesa Dungeons & Dragons, dentro do cenário de Forgotten Realms",
                 "Larian Studios",
                 "Larian Studios",
                 new BigDecimal("160.0"),
@@ -73,7 +73,7 @@ public class DBUtils {
         game = new GameModel(
                 "A Way Out",
                 "PATH",
-                "A Way Out é um jogo eletrônico de ação-aventura desenvolvido pela Hazelight Studios e publicado pela Electronic Arts sob o selo EA Originals. É o segundo jogo dirigido por Josef Fares após seu trabalho em Brothers: A Tale of Two Sons.",
+                "A Way Out é um jogo de ação-aventura desenvolvido pela Hazelight Studios e publicado pela Electronic Arts sob o selo EA Originals. É o segundo jogo dirigido por Josef Fares após seu trabalho em Brothers: A Tale of Two Sons.",
                 "Hazelight Studios",
                 "Eletronic Arts",
                 new BigDecimal("30.0"),
@@ -99,7 +99,7 @@ public class DBUtils {
         game = new GameModel(
                 "DOTA 2",
                 "PATH",
-                "Dota 2 é um jogo eletrônico do gênero multiplayer online battle arena (MOBA) desenvolvido e publicado pela Valve. Lançado em 2013, o jogo é uma sequência de Defense of the Ancients (DotA), uma modificação criada pela comunidade para o jogo Warcraft III: Reign of Chaos, da Blizzard Entertainment.",
+                "Dota 2 é um jogo do gênero multiplayer online battle arena (MOBA) desenvolvido e publicado pela Valve. Lançado em 2013, o jogo é uma sequência de Defense of the Ancients (DotA), uma modificação criada pela comunidade para o jogo Warcraft III: Reign of Chaos, da Blizzard Entertainment.",
                 "Blizzard",
                 "Blizzard",
                 new BigDecimal("0.0"),
@@ -112,7 +112,7 @@ public class DBUtils {
         game = new GameModel(
                 "God of War",
                 "PATH",
-                "God of War é um jogo eletrônico de ação-aventura desenvolvido pela Santa Monica Studio e publicado pela Sony Interactive Entertainment. Foi lançado em 20 de abril de 2018 para PlayStation 4 e em 14 de janeiro de 2022 para Microsoft Windows.",
+                "God of War é um jogo de ação-aventura desenvolvido pela Santa Monica Studio e publicado pela Sony Interactive Entertainment. Foi lançado em 20 de abril de 2018 para PlayStation 4 e em 14 de janeiro de 2022 para Microsoft Windows.",
                 "Santa Monica Studios",
                 "Sony Interactive Entertainment",
                 new BigDecimal("120.0"),
@@ -125,7 +125,7 @@ public class DBUtils {
         game = new GameModel(
                 "The Last of Us Part I",
                 "PATH",
-                "The Last of Us Part I é um jogo eletrônico de ação-aventura de 2022 desenvolvido pela Naughty Dog e publicado pela Sony Interactive Entertainment. É um remake de The Last of Us, apresentando jogabilidade e controles revisados, incluindo combate e exploração aprimorados e opções de acessibilidade expandidas.",
+                "The Last of Us Part I é um jogo de ação-aventura de 2022 desenvolvido pela Naughty Dog e publicado pela Sony Interactive Entertainment. É um remake de The Last of Us, apresentando jogabilidade e controles revisados, incluindo combate e exploração aprimorados e opções de acessibilidade expandidas.",
                 "Naughty Dog",
                 "Sony Interactive Entertainment",
                 new BigDecimal("230.0"),
@@ -138,7 +138,7 @@ public class DBUtils {
         game = new GameModel(
                 "The Witcher 3",
                 "PATH",
-                "The Witcher 3: Wild Hunt é um jogo eletrônico de RPG de ação em mundo aberto desenvolvido pela CD Projekt RED e lançado no dia 19 de maio de 2015 para as plataformas Microsoft Windows, PlayStation 4, Xbox One e em outubro de 2019 para o Nintendo Switch, sendo o terceiro título da série de jogos The Witcher.",
+                "The Witcher 3: Wild Hunt é um RPG de ação em mundo aberto desenvolvido pela CD Projekt RED e lançado no dia 19 de maio de 2015 para as plataformas Microsoft Windows, PlayStation 4, Xbox One e em outubro de 2019 para o Nintendo Switch, sendo o terceiro título da série de jogos The Witcher.",
                 "CD Projekt Red",
                 "CD Projekt Red",
                 new BigDecimal("100.0"),
@@ -151,7 +151,7 @@ public class DBUtils {
         game = new GameModel(
                 "Uncharted 4",
                 "PATH",
-                "Uncharted 4: A Thief's End é um jogo eletrônico de ação-aventura desenvolvido pela Naughty Dog e publicado pela Sony Computer Entertainment. É o quarto título principal da série Uncharted e foi lançado exclusivamente para PlayStation 4 em 10 de maio de 2016",
+                "Uncharted 4: A Thief's End é um jogo de ação-aventura desenvolvido pela Naughty Dog e publicado pela Sony Computer Entertainment. É o quarto título principal da série Uncharted e foi lançado exclusivamente para PlayStation 4 em 10 de maio de 2016",
                 "Naughty Dog",
                 "Sony Interactive Entertainment",
                 new BigDecimal("150.0"),
@@ -164,7 +164,7 @@ public class DBUtils {
         game = new GameModel(
                 "Ghost of Tsushima",
                 "PATH",
-                "Ghost of Tsushima é um jogo eletrônico de ação-aventura desenvolvido pela Sucker Punch Productions e publicado pela Sony Interactive Entertainment. A história acompanha Jin Sakai, um samurai que precisa proteger a Ilha de Tsushima durante a primeira invasão mongol do Japão.",
+                "Ghost of Tsushima é um jogo em mundo aberto de ação-aventura desenvolvido pela Sucker Punch Productions e publicado pela Sony Interactive Entertainment. A história acompanha Jin Sakai, um samurai que precisa proteger a Ilha de Tsushima durante a primeira invasão mongol do Japão.",
                 "Sucker Punch Productions",
                 "Sony Interactive Entertainment",
                 new BigDecimal("200.0"),
@@ -177,7 +177,7 @@ public class DBUtils {
         game = new GameModel(
                 "The Last of Us Part II",
                 "PATH",
-                "The Last of Us Part II é um jogo eletrônico de ação-aventura desenvolvido pela Naughty Dog e publicado pela Sony Interactive Entertainment. É o segundo jogo da franquia e foi lançado em 19 de junho de 2020 exclusivamente para PlayStation 4.",
+                "The Last of Us Part II é um jogo de ação-aventura desenvolvido pela Naughty Dog e publicado pela Sony Interactive Entertainment. É o segundo jogo da franquia e foi lançado em 19 de junho de 2020 exclusivamente para PlayStation 4.",
                 "Naughty Dog",
                 "Sony Interactive Entertainment",
                 new BigDecimal("200.0"),
@@ -190,7 +190,7 @@ public class DBUtils {
         game = new GameModel(
                 "God of War: Ragnarok",
                 "PATH",
-                "God of War Ragnarök é um jogo eletrônico de ação-aventura desenvolvido pela Santa Monica Studio e publicado pela Sony Interactive Entertainment. Foi lançado em 9 de novembro de 2022 para PlayStation 4 e PlayStation 5. Uma versão foi lançado para o Windows em 19 de setembro de 2024.",
+                "God of War Ragnarök é um jogo de ação-aventura desenvolvido pela Santa Monica Studio e publicado pela Sony Interactive Entertainment. Foi lançado em 9 de novembro de 2022 para PlayStation 4 e PlayStation 5. Uma versão foi lançado para o Windows em 19 de setembro de 2024.",
                 "Santa Monica Studios",
                 "Sony Interactive Entertainment",
                 new BigDecimal("230.0"),
@@ -203,7 +203,7 @@ public class DBUtils {
         game = new GameModel(
                 "Star Wars: Knights of The Old Republic",
                 "PATH",
-                "Star Wars: Cavaleiros da Velha República é um jogo eletrônico de RPG desenvolvido em 2003 pela Aspyr para computador com o sistema Apple Macintosh, e pela BioWare para videogame Xbox em julho de 2003 e para computador com o sistema Microsoft Windows em novembro de 2003 e, publicado pela LucasArts e Disney.",
+                "Star Wars: Cavaleiros da Velha República é um RPG desenvolvido em 2003 pela Aspyr para computador com o sistema Apple Macintosh, e pela BioWare para videogame Xbox em julho de 2003 e para computador com o sistema Microsoft Windows em novembro de 2003 e, publicado pela LucasArts e Disney.",
                 "Bioware",
                 "LucasArts",
                 new BigDecimal("10.0"),
