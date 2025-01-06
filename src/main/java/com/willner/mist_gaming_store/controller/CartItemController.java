@@ -35,4 +35,10 @@ public class CartItemController {
         CartItemModel cartItem = new CartItemModel(quantity, cart, game);
         return this.cartItemService.createCartItem(cartItem);
     }
+
+    // Alterar quantidade de um produto no carrinho
+    @PutMapping
+    public CartItemModel updateCartItem(@RequestBody CartItemModel cartItem) {
+        return cartItemService.updateCartItem(cartItem);
+    }
 }
