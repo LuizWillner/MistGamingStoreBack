@@ -26,7 +26,7 @@ public class CategoryModel {  // TODO: Sessão
     private LocalDateTime createdAt;
 
     @JsonIgnore
-    @OneToMany (mappedBy = "category", fetch = FetchType.LAZY)  // "category" se referencia ao atributo categoru de GameModel
+    @OneToMany (mappedBy = "category", fetch = FetchType.LAZY)  // "category" se referencia ao atributo category de GameModel
     private List<GameModel> games;
 
     public CategoryModel(String name) {
