@@ -22,7 +22,7 @@ public class CartController {
     }
 
     @DeleteMapping  // DELETE http://localhost:8080/user/cart?cartId=1&userId=1
-    public CartModel deleteCart(
+    public CartModel deleteCartByIdFromUser(
             @RequestParam(name = "cartId") Long cartId,
             @RequestParam(name = "userId") Long userId
     ) {
