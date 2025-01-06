@@ -1,6 +1,7 @@
 package com.willner.mist_gaming_store.service;
 
 import com.willner.mist_gaming_store.model.CartModel;
+import com.willner.mist_gaming_store.model.GameModel;
 import com.willner.mist_gaming_store.repository.ICartRepository;
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,6 +14,10 @@ public class CartService {
 
     @Autowired
     private ICartRepository cartRepository;
+
+    public CartModel createCart(CartModel cart) {
+        return this.cartRepository.save(cart);
+    }
 
     public CartModel getCartByIdFromUser(Long cartId, Long userId) {
         return cartRepository.findByCartIdAndUserId(cartId, userId)

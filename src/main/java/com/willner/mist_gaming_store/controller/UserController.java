@@ -1,7 +1,9 @@
 package com.willner.mist_gaming_store.controller;
 
+import com.willner.mist_gaming_store.model.CartModel;
 import com.willner.mist_gaming_store.model.GameModel;
 import com.willner.mist_gaming_store.model.UserModel;
+import com.willner.mist_gaming_store.service.CartService;
 import com.willner.mist_gaming_store.service.UserService;
 import com.willner.mist_gaming_store.util.TokenResponse;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,12 +19,17 @@ public class UserController {
     @Autowired  // indica ao Spring que ele deve fazer o gerenciamento do ciclo de vida instância
     private UserService userService;
 
+    @Autowired
+    private CartService cartService;
+
     @PostMapping("/create")  // POST http://localhost:8080/user/create
     public ResponseEntity createUser(@RequestBody UserModel user) {
         var userCreated = this.userService.createUser(user);
         if (userCreated == null) {
             return ResponseEntity.status(HttpStatus.CONFLICT).body("User já existe.");
         }
+        var cartOfUser = new CartModel(userCreated);
+        this.cartService.createCart(cartOfUser);
         return ResponseEntity.status(HttpStatus.CREATED).body(userCreated);
     }
 
