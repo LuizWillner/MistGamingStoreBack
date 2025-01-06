@@ -18,8 +18,8 @@ public class TesteController {
      * PATCH: Alterar somente uma parte do dado/informação
      *
      */
-    @GetMapping("/hello-world")  // GET http://localhost:8080/teste/hello-world
-    public String helloWorld() {
-        return "Hello World!";
+    @GetMapping("/ping")  // GET http://localhost:8080/teste/hello-world
+    public String ping() {
+        return "pong";
     }
 }
