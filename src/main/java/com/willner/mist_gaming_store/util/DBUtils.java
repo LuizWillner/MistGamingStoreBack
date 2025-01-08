@@ -51,6 +51,14 @@ public class DBUtils {
         this.categoryRepository.save(catMundoAberto);
         CategoryModel catFps = new CategoryModel("FPS");
         this.categoryRepository.save(catFps);
+        CategoryModel catHeroShooter = new CategoryModel("Hero Shooter");
+        this.categoryRepository.save(catHeroShooter);
+        CategoryModel catEsportes = new CategoryModel("Esportes");
+        this.categoryRepository.save(catEsportes);
+        CategoryModel catMmorpg = new CategoryModel("MMORPG");
+        this.categoryRepository.save(catMmorpg);
+        CategoryModel catSoulsLike = new CategoryModel("Souls Like");
+        this.categoryRepository.save(catSoulsLike);
 
         GameModel game = new GameModel(
                 "Baldur's Gate 3",
@@ -218,6 +226,162 @@ public class DBUtils {
                 LocalDate.of(2003, 7, 15),
                 100,
                 catCrpg
+        );
+        this.gameRepository.save(game);
+
+        game = new GameModel(
+                "Counter-Strike: Global Offensive",
+                "PATH",
+                "Counter-Strike: Global Offensive é um jogo de tiro em primeira pessoa online desenvolvido pela Valve Corporation. É o quarto jogo principal da série Counter-Strike e foi lançado para Microsoft Windows, OS X, Xbox 360 e PlayStation 3 em 21 de agosto de 2012.",
+                "Valve Corporation",
+                "Valve Corporation",
+                new BigDecimal("0.0"),
+                LocalDate.of(2012, 8, 21),
+                1000000,
+                catFps
+        );
+        this.gameRepository.save(game);
+
+        game = new GameModel(
+                "Valorant",
+                "PATH",
+                "Valorant é um jogo eletrônico multijogador gratuito para jogar de tiro em primeira pessoa desenvolvido e publicado pela Riot Games. O jogo foi anunciado com o codinome Project A em outubro de 2019 e foi lançado em 2 de junho de 2020.",
+                "Riot Games",
+                "Riot Games",
+                new BigDecimal("0.0"),
+                LocalDate.of(2020, 6, 2),
+                1000000,
+                catHeroShooter
+        );
+        this.gameRepository.save(game);
+
+        game = new GameModel(
+                "Overwatch",
+                "PATH",
+                "Overwatch é um jogo eletrônico multijogador de tiro em primeira pessoa desenvolvido e publicado pela Blizzard Entertainment. Revelado na BlizzCon de 2014, o jogo enfatiza a jogabilidade cooperativa usando uma série de personagens diversos, cada um com suas próprias habilidades e funções no campo de batalha.",
+                "Blizzard",
+                "Blizzard",
+                new BigDecimal("0.0"),
+                LocalDate.of(2016, 5, 24),
+                1000000,
+                catHeroShooter
+        );
+        this.gameRepository.save(game);
+
+        game = new GameModel(
+            "Cyberpunk 2077",
+            "PATH",
+            "Cyberpunk 2077 é um RPG de ação e aventura em mundo aberto que se passa em Night City, uma megalópole perigosa onde todos são obcecados por poder, glamour e alterações corporais.",
+            "CD Projekt Red",
+            "CD Projekt Red",
+            new BigDecimal("200.0"),
+            LocalDate.of(2020, 12, 9),
+            100,
+            catMundoAberto
+        );
+        this.gameRepository.save(game);
+
+        game = new GameModel(
+            "The Elder Scrolls V: Skyrim",
+            "PATH",
+            "The Elder Scrolls V: Skyrim é um RPG eletrônico de ação desenvolvido pela Bethesda Game Studios e publicado pela Bethesda Softworks. É o quinto jogo principal da série The Elder Scrolls, seguindo The Elder Scrolls IV: Oblivion.",
+            "Bethesda Game Studios",
+            "Bethesda Softworks",
+            new BigDecimal("100.0"),
+            LocalDate.of(2011, 11, 11),
+            100,
+            catRpgAcao
+        );
+        this.gameRepository.save(game);
+
+        game = new GameModel(
+                "EA Sports FC 25",
+                "PATH",
+                "EA Sports FC 25 é um jogo de futebol desenvolvido pela EA Sports. O jogo é uma simulação de futebol e é o 25º título da série EA Sports FC.",
+                "EA Canada & EA Romania",
+                "EA Sports",
+                new BigDecimal("300.0"),
+                LocalDate.of(2024, 9, 27),
+                100,
+                catEsportes
+        );
+        this.gameRepository.save(game);
+
+        game = new GameModel(
+                "World of Warcraft",
+                "PATH",
+                "World of Warcraft é um jogo eletrônico de RPG online desenvolvido e publicado pela Blizzard Entertainment. É o quarto jogo lançado ambientado no universo fantástico de Warcraft, que foi introduzido pelo primeiro título, Warcraft: Orcs & Humans, em 1994.",
+                "Blizzard",
+                "Blizzard",
+                new BigDecimal("0.0"),
+                LocalDate.of(2004, 11, 23),
+                1000000,
+                catMmorpg
+        );
+        this.gameRepository.save(game);
+
+        game = new GameModel(
+                "Red Dead Redemption 2",
+                "PATH",
+                "Red Dead Redemption 2 é um jogo de mundo aberto que se passa no velho oeste e desenvolvido e publicado pela Rockstar Games. É o terceiro título da série Red Dead e uma prequela de Red Dead Redemption.",
+                "Rockstar Games",
+                "Rockstar Games",
+                new BigDecimal("200.0"),
+                LocalDate.of(2018, 10, 26),
+                100,
+                catMundoAberto
+        );
+        this.gameRepository.save(game);
+
+        game = new GameModel(
+                "Dark Souls III",
+                "PATH",
+                "DARK SOULS™ continua a ultrapassar seus próprios limites em um ambicioso novo capítulo da série que definiu um gênero e que é aclamada pela crítica. Prepare-se para abraçar a escuridão!",
+                "FromSoftware",
+                "Bandai Namco Entertainment",
+                new BigDecimal("100.0"),
+                LocalDate.of(2016, 3, 24),
+                100,
+                catSoulsLike
+        );
+        this.gameRepository.save(game);
+
+        game = new GameModel(
+                "Bloodborne",
+                "PATH",
+                "Perigo, morte e loucura estão em cada canto deste sombrio e horroroso mundo, e você deve descobrir seus segredos mais sombrios para sobreviver. -Um aterrorizante mundo novo: Faça uma jornada para uma cidade gótica cheia de horror, onde multidões loucas e criaturas assustadoras espreitam em cada canto.",
+                "FromSoftware",
+                "Sony Interactive Entertainment",
+                new BigDecimal("150.0"),
+                LocalDate.of(2015, 3, 24),
+                100,
+                catSoulsLike
+        );
+        this.gameRepository.save(game);
+
+        game = new GameModel(
+                "Sekiro: Shadows Die Twice",
+                "PATH",
+                "Em Sekiro: Shadows Die Twice você é o 'lobo de um braço só', um guerreiro desfigurado e desgraçado resgatado da beira da morte. Destinado a proteger um jovem senhor descendente de uma antiga linhagem, você se tornará alvo de muitos inimigos cruéis, incluindo o perigoso clã Ashina.",
+                "FromSoftware",
+                "Activision",
+                new BigDecimal("200.0"),
+                LocalDate.of(2019, 3, 21),
+                100,
+                catSoulsLike
+        );
+        this.gameRepository.save(game);
+
+        game = new GameModel(
+                "Elden Ring",
+                "PATH",
+                "Levante-se, Maculado, e seja guiado pela graça para portar o poder do Anel Prístino e se tornar um Lorde Prístino nas Terras Intermédias. Em Elden Ring, junte-se a um mundo cheio de mistérios e perigos, e embarque em uma jornada épica para desvendar o destino do Reino.",
+                "FromSoftware",
+                "Bandai Namco Entertainment",
+                new BigDecimal("250.0"),
+                LocalDate.of(2022, 2, 24),
+                100,
+                catSoulsLike
         );
         this.gameRepository.save(game);
     }
