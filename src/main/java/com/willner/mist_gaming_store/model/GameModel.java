@@ -2,6 +2,7 @@ package com.willner.mist_gaming_store.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
@@ -40,6 +41,11 @@ public class GameModel {  //TODO: Ingresso, Produto
     @NotNull(message = "O 'Preço' deve ser informado.")
     private BigDecimal price;
 
+    @Min(value=0, message = "O 'Desconto' deve ser maior ou igual a 0.")
+    @Max(value=1, message = "O 'Desconto' deve ser menor ou igual a 1.")
+    @Column(columnDefinition = "double default 1.0")
+    private Double discount = 1.0;
+
     private LocalDate releaseDate;
 
     @Min(value=0, message = "A 'Quantidade em estoque' deve ser maior ou igual a 0.")
@@ -66,6 +72,7 @@ public class GameModel {  //TODO: Ingresso, Produto
             String developer,
             String publisher,
             BigDecimal price,
+            Double discount,
             LocalDate releaseDate,
             int stockQuantity,
             CategoryModel category
@@ -76,6 +83,7 @@ public class GameModel {  //TODO: Ingresso, Produto
         this.developer = developer;
         this.publisher = publisher;
         this.price = price;
+        this.discount = discount;
         this.releaseDate = releaseDate;
         this.stockQuantity = stockQuantity;
         this.category = category;

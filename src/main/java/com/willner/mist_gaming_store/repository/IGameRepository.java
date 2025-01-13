@@ -38,4 +38,12 @@ public interface IGameRepository extends JpaRepository<GameModel, Long> {
             countQuery = "SELECT count(g) FROM game g WHERE g.releaseDate BETWEEN :dateMin AND :dateMax"
     )
     Page<GameModel> findGamesPageableByCReleaseDate(LocalDate dateMin, LocalDate dateMax, Pageable pageable);
+
+    @Query(
+            value = "SELECT g FROM game g WHERE g.discount BETWEEN :discountMin AND :discountMax ORDER BY g.discount ASC",
+            countQuery = "SELECT count(g) FROM game g WHERE g.discount BETWEEN :discountMin AND :discountMax"
+    )
+    Page<GameModel> findGamesPageableByDiscount(Double discountMin, Double discountMax, Pageable pageable);
+
+
 }

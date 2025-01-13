@@ -63,6 +63,17 @@ public class GameService {
         return gameRepository.findGamesPageableByCReleaseDate(dateMin, dateMax, pageable);
     }
 
+    public Page<GameModel> getGamesPageableByDiscount(Double discountMin, Double discountMax, Pageable pageable) {
+        if (discountMin == null && discountMax == null) {
+            return gameRepository.findGamesPageableByCategoryName("", pageable);
+        } else if (discountMin == null) {
+            discountMin = 0.0;
+        } else if (discountMax == null) {
+            discountMax = 1.0;
+        }
+        return gameRepository.findGamesPageableByDiscount(discountMin, discountMax, pageable);
+    }
+
     public GameModel findGameById(Long gameId) {
         return this.gameRepository.findById(gameId)
                 .orElseThrow(

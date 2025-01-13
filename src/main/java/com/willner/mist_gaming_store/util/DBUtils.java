@@ -66,7 +66,8 @@ public class DBUtils {
                 "Baldur's Gate III é um RPG desenvolvido e publicado pela Larian Studios. É o terceiro jogo principal da série Baldur's Gate, que é baseada no sistema de RPG de mesa Dungeons & Dragons, dentro do cenário de Forgotten Realms",
                 "Larian Studios",
                 "Larian Studios",
-                new BigDecimal("160.0"),
+                new BigDecimal("200.0"),
+                0.8,
                 LocalDate.of(2023, 8, 3),
                 50,
                 catCrpg
@@ -80,6 +81,7 @@ public class DBUtils {
                 "Arrow Head",
                 "Sony Interactive Entertainment",
                 new BigDecimal("200.0"),
+                1.0,
                 LocalDate.of(2024, 2, 8),
                 100,
                 catCoop
@@ -92,7 +94,8 @@ public class DBUtils {
                 "A Way Out é um jogo de ação-aventura desenvolvido pela Hazelight Studios e publicado pela Electronic Arts sob o selo EA Originals. É o segundo jogo dirigido por Josef Fares após seu trabalho em Brothers: A Tale of Two Sons.",
                 "Hazelight Studios",
                 "Eletronic Arts",
-                new BigDecimal("30.0"),
+                new BigDecimal("60.0"),
+                0.5,
                 LocalDate.of(2018, 3, 23),
                 100,
                 catCoop
@@ -106,6 +109,7 @@ public class DBUtils {
                 "Riot Games",
                 "Riot Games",
                 new BigDecimal("0.0"),
+                1.0,
                 LocalDate.of(2009, 10, 27),
                 1000000,
                 catMoba
@@ -119,6 +123,7 @@ public class DBUtils {
                 "Blizzard",
                 "Blizzard",
                 new BigDecimal("0.0"),
+                1.0,
                 LocalDate.of(2013, 7, 9),
                 1000000,
                 catMoba
@@ -131,7 +136,8 @@ public class DBUtils {
                 "God of War é um jogo de ação-aventura desenvolvido pela Santa Monica Studio e publicado pela Sony Interactive Entertainment. Foi lançado em 20 de abril de 2018 para PlayStation 4 e em 14 de janeiro de 2022 para Microsoft Windows.",
                 "Santa Monica Studios",
                 "Sony Interactive Entertainment",
-                new BigDecimal("120.0"),
+                new BigDecimal("200.0"),
+                0.6,
                 LocalDate.of(2018, 4, 20),
                 100,
                 catAcaoEAventura
@@ -145,6 +151,7 @@ public class DBUtils {
                 "Naughty Dog",
                 "Sony Interactive Entertainment",
                 new BigDecimal("230.0"),
+                1.0,
                 LocalDate.of(2022, 9, 2),
                 100,
                 catAcaoEAventura
@@ -157,7 +164,8 @@ public class DBUtils {
                 "The Witcher 3: Wild Hunt é um RPG de ação em mundo aberto desenvolvido pela CD Projekt RED e lançado no dia 19 de maio de 2015 para as plataformas Microsoft Windows, PlayStation 4, Xbox One e em outubro de 2019 para o Nintendo Switch, sendo o terceiro título da série de jogos The Witcher.",
                 "CD Projekt Red",
                 "CD Projekt Red",
-                new BigDecimal("100.0"),
+                new BigDecimal("200.0"),
+                0.5,
                 LocalDate.of(2015, 5, 18),
                 100,
                 catRpgAcao
@@ -170,7 +178,8 @@ public class DBUtils {
                 "Uncharted 4: A Thief's End é um jogo de ação-aventura desenvolvido pela Naughty Dog e publicado pela Sony Computer Entertainment. É o quarto título principal da série Uncharted e foi lançado exclusivamente para PlayStation 4 em 10 de maio de 2016",
                 "Naughty Dog",
                 "Sony Interactive Entertainment",
-                new BigDecimal("150.0"),
+                new BigDecimal("200.0"),
+                0.75,
                 LocalDate.of(2016, 5, 10),
                 100,
                 catAcaoEAventura
@@ -184,6 +193,7 @@ public class DBUtils {
                 "Sucker Punch Productions",
                 "Sony Interactive Entertainment",
                 new BigDecimal("200.0"),
+                1.0,
                 LocalDate.of(2020, 7, 17),
                 100,
                 catMundoAberto
@@ -197,6 +207,7 @@ public class DBUtils {
                 "Naughty Dog",
                 "Sony Interactive Entertainment",
                 new BigDecimal("200.0"),
+                1.0,
                 LocalDate.of(2020, 6, 19),
                 100,
                 catAcaoEAventura
@@ -210,6 +221,7 @@ public class DBUtils {
                 "Santa Monica Studios",
                 "Sony Interactive Entertainment",
                 new BigDecimal("230.0"),
+                1.0,
                 LocalDate.of(2024, 9, 19),
                 100,
                 catAcaoEAventura
@@ -222,7 +234,8 @@ public class DBUtils {
                 "Star Wars: Cavaleiros da Velha República é um RPG desenvolvido em 2003 pela Aspyr para computador com o sistema Apple Macintosh, e pela BioWare para videogame Xbox em julho de 2003 e para computador com o sistema Microsoft Windows em novembro de 2003 e, publicado pela LucasArts e Disney.",
                 "Bioware",
                 "LucasArts",
-                new BigDecimal("10.0"),
+                new BigDecimal("25.0"),
+                0.4,
                 LocalDate.of(2003, 7, 15),
                 100,
                 catCrpg
@@ -236,6 +249,7 @@ public class DBUtils {
                 "Valve Corporation",
                 "Valve Corporation",
                 new BigDecimal("0.0"),
+                1.0,
                 LocalDate.of(2012, 8, 21),
                 1000000,
                 catFps
@@ -249,6 +263,7 @@ public class DBUtils {
                 "Riot Games",
                 "Riot Games",
                 new BigDecimal("0.0"),
+                1.0,
                 LocalDate.of(2020, 6, 2),
                 1000000,
                 catHeroShooter
@@ -262,6 +277,7 @@ public class DBUtils {
                 "Blizzard",
                 "Blizzard",
                 new BigDecimal("0.0"),
+                1.0,
                 LocalDate.of(2016, 5, 24),
                 1000000,
                 catHeroShooter
@@ -275,6 +291,7 @@ public class DBUtils {
             "CD Projekt Red",
             "CD Projekt Red",
             new BigDecimal("200.0"),
+            1.0,
             LocalDate.of(2020, 12, 9),
             100,
             catMundoAberto
@@ -287,7 +304,8 @@ public class DBUtils {
             "The Elder Scrolls V: Skyrim é um RPG eletrônico de ação desenvolvido pela Bethesda Game Studios e publicado pela Bethesda Softworks. É o quinto jogo principal da série The Elder Scrolls, seguindo The Elder Scrolls IV: Oblivion.",
             "Bethesda Game Studios",
             "Bethesda Softworks",
-            new BigDecimal("100.0"),
+            new BigDecimal("200.0"),
+            0.6,
             LocalDate.of(2011, 11, 11),
             100,
             catRpgAcao
@@ -301,6 +319,7 @@ public class DBUtils {
                 "EA Canada & EA Romania",
                 "EA Sports",
                 new BigDecimal("300.0"),
+                1.0,
                 LocalDate.of(2024, 9, 27),
                 100,
                 catEsportes
@@ -314,6 +333,7 @@ public class DBUtils {
                 "Blizzard",
                 "Blizzard",
                 new BigDecimal("0.0"),
+                1.0,
                 LocalDate.of(2004, 11, 23),
                 1000000,
                 catMmorpg
@@ -327,6 +347,7 @@ public class DBUtils {
                 "Rockstar Games",
                 "Rockstar Games",
                 new BigDecimal("200.0"),
+                1.0,
                 LocalDate.of(2018, 10, 26),
                 100,
                 catMundoAberto
@@ -340,6 +361,7 @@ public class DBUtils {
                 "FromSoftware",
                 "Bandai Namco Entertainment",
                 new BigDecimal("100.0"),
+                1.0,
                 LocalDate.of(2016, 3, 24),
                 100,
                 catSoulsLike
@@ -353,6 +375,7 @@ public class DBUtils {
                 "FromSoftware",
                 "Sony Interactive Entertainment",
                 new BigDecimal("150.0"),
+                1.0,
                 LocalDate.of(2015, 3, 24),
                 100,
                 catSoulsLike
@@ -366,6 +389,7 @@ public class DBUtils {
                 "FromSoftware",
                 "Activision",
                 new BigDecimal("200.0"),
+               1.0,
                 LocalDate.of(2019, 3, 21),
                 100,
                 catSoulsLike
@@ -379,6 +403,7 @@ public class DBUtils {
                 "FromSoftware",
                 "Bandai Namco Entertainment",
                 new BigDecimal("250.0"),
+                1.0,
                 LocalDate.of(2022, 2, 24),
                 100,
                 catSoulsLike

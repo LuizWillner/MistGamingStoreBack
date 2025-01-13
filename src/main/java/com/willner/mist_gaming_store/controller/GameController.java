@@ -109,6 +109,24 @@ public class GameController {
         return resultadoPaginado;
     }
 
+    @GetMapping("pageable/discount")   // GET http://localhost:8080/game/pageable/discount?page=0&size=5
+    public ResultadoPaginado<GameModel> getGamesPageableByDiscount(
+            @RequestParam(name= "page", defaultValue = "0") int page,
+            @RequestParam(name= "size", defaultValue = "3") int size,
+            @RequestParam(name="discountMin", defaultValue = "0") Double discountMin,
+            @RequestParam(name="discountMax", defaultValue = "1") Double discountMax
+    ) {
+        Pageable pageable = PageRequest.of(page, size);
+        Page<GameModel> paginaDeProduto = gameService.getGamesPageableByDiscount(discountMin, discountMax, pageable);
+        ResultadoPaginado<GameModel> resultadoPaginado = new ResultadoPaginado<>(
+                paginaDeProduto.getTotalElements(),
+                paginaDeProduto.getTotalPages(),
+                paginaDeProduto.getNumber(),
+                paginaDeProduto.getContent()
+        );
+        return resultadoPaginado;
+    }
+
     @PutMapping  // PUT http://localhost:8080/game
     public GameModel updateGame(@RequestBody GameModel game) {
         return gameService.updateGame(game);
