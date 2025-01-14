@@ -235,7 +235,7 @@ public class DBUtils {
                 "Bioware",
                 "LucasArts",
                 new BigDecimal("25.0"),
-                0.4,
+                1.0,
                 LocalDate.of(2003, 7, 15),
                 100,
                 catCrpg
