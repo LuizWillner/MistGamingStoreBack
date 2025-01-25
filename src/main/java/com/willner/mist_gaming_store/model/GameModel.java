@@ -31,6 +31,8 @@ public class GameModel {  //TODO: Ingresso, Produto
 
     private String image;
 
+    private String trailer;
+
     @Column(length = 1000)
     @NotEmpty(message = "A 'Descrição' deve ser informada.")
     private String description;
@@ -68,6 +70,7 @@ public class GameModel {  //TODO: Ingresso, Produto
     public GameModel(
             String name,
             String image,
+            String trailer,
             String description,
             String developer,
             String publisher,
@@ -79,6 +82,7 @@ public class GameModel {  //TODO: Ingresso, Produto
     ) {
         this.name = name;
         this.image = image;
+        this.trailer = trailer;
         this.description = description;
         this.developer = developer;
         this.publisher = publisher;

@@ -63,6 +63,7 @@ public class DBUtils {
         GameModel game = new GameModel(
                 "Baldur's Gate 3",
                 "PATH",
+                "TRAILER PATH",
                 "Baldur's Gate III é um RPG desenvolvido e publicado pela Larian Studios. É o terceiro jogo principal da série Baldur's Gate, que é baseada no sistema de RPG de mesa Dungeons & Dragons, dentro do cenário de Forgotten Realms",
                 "Larian Studios",
                 "Larian Studios",
@@ -77,6 +78,7 @@ public class DBUtils {
         game = new GameModel(
                 "Helldivers 2",
                 "PATH",
+                "TRAILER PATH",
                 "For DEMOCRACY!",
                 "Arrow Head",
                 "Sony Interactive Entertainment",
@@ -91,6 +93,7 @@ public class DBUtils {
         game = new GameModel(
                 "A Way Out",
                 "PATH",
+                "TRAILER PATH",
                 "A Way Out é um jogo de ação-aventura desenvolvido pela Hazelight Studios e publicado pela Electronic Arts sob o selo EA Originals. É o segundo jogo dirigido por Josef Fares após seu trabalho em Brothers: A Tale of Two Sons.",
                 "Hazelight Studios",
                 "Eletronic Arts",
@@ -105,6 +108,7 @@ public class DBUtils {
         game = new GameModel(
                 "League of Legends",
                 "PATH",
+                "TRAILER PATH",
                 "League of Legends é um jogo de estratégia em que duas equipes de cinco poderosos Campeões se enfrentam para destruir a base uma da outra. Escolha entre mais de 140 Campeões para realizar jogadas épicas, assegurar abates e destruir torres conforme você luta até a vitória.",
                 "Riot Games",
                 "Riot Games",
@@ -119,6 +123,7 @@ public class DBUtils {
         game = new GameModel(
                 "DOTA 2",
                 "PATH",
+                "TRAILER PATH",
                 "Dota 2 é um jogo do gênero multiplayer online battle arena (MOBA) desenvolvido e publicado pela Valve. Lançado em 2013, o jogo é uma sequência de Defense of the Ancients (DotA), uma modificação criada pela comunidade para o jogo Warcraft III: Reign of Chaos, da Blizzard Entertainment.",
                 "Blizzard",
                 "Blizzard",
@@ -133,6 +138,7 @@ public class DBUtils {
         game = new GameModel(
                 "God of War",
                 "PATH",
+                "TRAILER PATH",
                 "God of War é um jogo de ação-aventura desenvolvido pela Santa Monica Studio e publicado pela Sony Interactive Entertainment. Foi lançado em 20 de abril de 2018 para PlayStation 4 e em 14 de janeiro de 2022 para Microsoft Windows.",
                 "Santa Monica Studios",
                 "Sony Interactive Entertainment",
@@ -147,6 +153,7 @@ public class DBUtils {
         game = new GameModel(
                 "The Last of Us Part I",
                 "PATH",
+                "TRAILER PATH",
                 "The Last of Us Part I é um jogo de ação-aventura de 2022 desenvolvido pela Naughty Dog e publicado pela Sony Interactive Entertainment. É um remake de The Last of Us, apresentando jogabilidade e controles revisados, incluindo combate e exploração aprimorados e opções de acessibilidade expandidas.",
                 "Naughty Dog",
                 "Sony Interactive Entertainment",
@@ -161,6 +168,7 @@ public class DBUtils {
         game = new GameModel(
                 "The Witcher 3",
                 "PATH",
+                "TRAILER PATH",
                 "The Witcher 3: Wild Hunt é um RPG de ação em mundo aberto desenvolvido pela CD Projekt RED e lançado no dia 19 de maio de 2015 para as plataformas Microsoft Windows, PlayStation 4, Xbox One e em outubro de 2019 para o Nintendo Switch, sendo o terceiro título da série de jogos The Witcher.",
                 "CD Projekt Red",
                 "CD Projekt Red",
@@ -175,6 +183,7 @@ public class DBUtils {
         game = new GameModel(
                 "Uncharted 4",
                 "PATH",
+                "TRAILER PATH",
                 "Uncharted 4: A Thief's End é um jogo de ação-aventura desenvolvido pela Naughty Dog e publicado pela Sony Computer Entertainment. É o quarto título principal da série Uncharted e foi lançado exclusivamente para PlayStation 4 em 10 de maio de 2016",
                 "Naughty Dog",
                 "Sony Interactive Entertainment",
@@ -189,6 +198,7 @@ public class DBUtils {
         game = new GameModel(
                 "Ghost of Tsushima",
                 "PATH",
+                "TRAILER PATH",
                 "Ghost of Tsushima é um jogo em mundo aberto de ação-aventura desenvolvido pela Sucker Punch Productions e publicado pela Sony Interactive Entertainment. A história acompanha Jin Sakai, um samurai que precisa proteger a Ilha de Tsushima durante a primeira invasão mongol do Japão.",
                 "Sucker Punch Productions",
                 "Sony Interactive Entertainment",
@@ -203,6 +213,7 @@ public class DBUtils {
         game = new GameModel(
                 "The Last of Us Part II",
                 "PATH",
+                "TRAILER PATH",
                 "The Last of Us Part II é um jogo de ação-aventura desenvolvido pela Naughty Dog e publicado pela Sony Interactive Entertainment. É o segundo jogo da franquia e foi lançado em 19 de junho de 2020 exclusivamente para PlayStation 4.",
                 "Naughty Dog",
                 "Sony Interactive Entertainment",
@@ -217,6 +228,7 @@ public class DBUtils {
         game = new GameModel(
                 "God of War: Ragnarok",
                 "PATH",
+                "TRAILER PATH",
                 "God of War Ragnarök é um jogo de ação-aventura desenvolvido pela Santa Monica Studio e publicado pela Sony Interactive Entertainment. Foi lançado em 9 de novembro de 2022 para PlayStation 4 e PlayStation 5. Uma versão foi lançado para o Windows em 19 de setembro de 2024.",
                 "Santa Monica Studios",
                 "Sony Interactive Entertainment",
@@ -231,6 +243,7 @@ public class DBUtils {
         game = new GameModel(
                 "Star Wars: Knights of The Old Republic",
                 "PATH",
+                "TRAILER PATH",
                 "Star Wars: Cavaleiros da Velha República é um RPG desenvolvido em 2003 pela Aspyr para computador com o sistema Apple Macintosh, e pela BioWare para videogame Xbox em julho de 2003 e para computador com o sistema Microsoft Windows em novembro de 2003 e, publicado pela LucasArts e Disney.",
                 "Bioware",
                 "LucasArts",
@@ -245,6 +258,7 @@ public class DBUtils {
         game = new GameModel(
                 "Counter-Strike: Global Offensive",
                 "PATH",
+                "TRAILER PATH",
                 "Counter-Strike: Global Offensive é um jogo de tiro em primeira pessoa online desenvolvido pela Valve Corporation. É o quarto jogo principal da série Counter-Strike e foi lançado para Microsoft Windows, OS X, Xbox 360 e PlayStation 3 em 21 de agosto de 2012.",
                 "Valve Corporation",
                 "Valve Corporation",
@@ -259,6 +273,7 @@ public class DBUtils {
         game = new GameModel(
                 "Valorant",
                 "PATH",
+                "TRAILER PATH",
                 "Valorant é um jogo eletrônico multijogador gratuito para jogar de tiro em primeira pessoa desenvolvido e publicado pela Riot Games. O jogo foi anunciado com o codinome Project A em outubro de 2019 e foi lançado em 2 de junho de 2020.",
                 "Riot Games",
                 "Riot Games",
@@ -273,6 +288,7 @@ public class DBUtils {
         game = new GameModel(
                 "Overwatch",
                 "PATH",
+                "TRAILER PATH",
                 "Overwatch é um jogo eletrônico multijogador de tiro em primeira pessoa desenvolvido e publicado pela Blizzard Entertainment. Revelado na BlizzCon de 2014, o jogo enfatiza a jogabilidade cooperativa usando uma série de personagens diversos, cada um com suas próprias habilidades e funções no campo de batalha.",
                 "Blizzard",
                 "Blizzard",
@@ -287,6 +303,7 @@ public class DBUtils {
         game = new GameModel(
             "Cyberpunk 2077",
             "PATH",
+            "TRAILER PATH",
             "Cyberpunk 2077 é um RPG de ação e aventura em mundo aberto que se passa em Night City, uma megalópole perigosa onde todos são obcecados por poder, glamour e alterações corporais.",
             "CD Projekt Red",
             "CD Projekt Red",
@@ -301,6 +318,7 @@ public class DBUtils {
         game = new GameModel(
             "The Elder Scrolls V: Skyrim",
             "PATH",
+            "TRAILER PATH",
             "The Elder Scrolls V: Skyrim é um RPG eletrônico de ação desenvolvido pela Bethesda Game Studios e publicado pela Bethesda Softworks. É o quinto jogo principal da série The Elder Scrolls, seguindo The Elder Scrolls IV: Oblivion.",
             "Bethesda Game Studios",
             "Bethesda Softworks",
@@ -315,6 +333,7 @@ public class DBUtils {
         game = new GameModel(
                 "EA Sports FC 25",
                 "PATH",
+                "TRAILER PATH",
                 "EA Sports FC 25 é um jogo de futebol desenvolvido pela EA Sports. O jogo é uma simulação de futebol e é o 25º título da série EA Sports FC.",
                 "EA Canada & EA Romania",
                 "EA Sports",
@@ -329,6 +348,7 @@ public class DBUtils {
         game = new GameModel(
                 "World of Warcraft",
                 "PATH",
+                "TRAILER PATH",
                 "World of Warcraft é um jogo eletrônico de RPG online desenvolvido e publicado pela Blizzard Entertainment. É o quarto jogo lançado ambientado no universo fantástico de Warcraft, que foi introduzido pelo primeiro título, Warcraft: Orcs & Humans, em 1994.",
                 "Blizzard",
                 "Blizzard",
@@ -343,6 +363,7 @@ public class DBUtils {
         game = new GameModel(
                 "Red Dead Redemption 2",
                 "PATH",
+                "TRAILER PATH",
                 "Red Dead Redemption 2 é um jogo de mundo aberto que se passa no velho oeste e desenvolvido e publicado pela Rockstar Games. É o terceiro título da série Red Dead e uma prequela de Red Dead Redemption.",
                 "Rockstar Games",
                 "Rockstar Games",
@@ -357,6 +378,7 @@ public class DBUtils {
         game = new GameModel(
                 "Dark Souls III",
                 "PATH",
+                "TRAILER PATH",
                 "DARK SOULS™ continua a ultrapassar seus próprios limites em um ambicioso novo capítulo da série que definiu um gênero e que é aclamada pela crítica. Prepare-se para abraçar a escuridão!",
                 "FromSoftware",
                 "Bandai Namco Entertainment",
@@ -371,6 +393,7 @@ public class DBUtils {
         game = new GameModel(
                 "Bloodborne",
                 "PATH",
+                "TRAILER PATH",
                 "Perigo, morte e loucura estão em cada canto deste sombrio e horroroso mundo, e você deve descobrir seus segredos mais sombrios para sobreviver. -Um aterrorizante mundo novo: Faça uma jornada para uma cidade gótica cheia de horror, onde multidões loucas e criaturas assustadoras espreitam em cada canto.",
                 "FromSoftware",
                 "Sony Interactive Entertainment",
@@ -385,6 +408,7 @@ public class DBUtils {
         game = new GameModel(
                 "Sekiro: Shadows Die Twice",
                 "PATH",
+                "TRAILER PATH",
                 "Em Sekiro: Shadows Die Twice você é o 'lobo de um braço só', um guerreiro desfigurado e desgraçado resgatado da beira da morte. Destinado a proteger um jovem senhor descendente de uma antiga linhagem, você se tornará alvo de muitos inimigos cruéis, incluindo o perigoso clã Ashina.",
                 "FromSoftware",
                 "Activision",
@@ -399,6 +423,7 @@ public class DBUtils {
         game = new GameModel(
                 "Elden Ring",
                 "PATH",
+                "TRAILER PATH",
                 "Levante-se, Maculado, e seja guiado pela graça para portar o poder do Anel Prístino e se tornar um Lorde Prístino nas Terras Intermédias. Em Elden Ring, junte-se a um mundo cheio de mistérios e perigos, e embarque em uma jornada épica para desvendar o destino do Reino.",
                 "FromSoftware",
                 "Bandai Namco Entertainment",
