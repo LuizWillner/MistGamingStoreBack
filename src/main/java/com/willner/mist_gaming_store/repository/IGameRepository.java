@@ -28,7 +28,7 @@ public interface IGameRepository extends JpaRepository<GameModel, Long> {
     Page<GameModel> findGamesPageableByCategoryId(int categoryId, Pageable pageable);
 
     @Query(
-            value = "SELECT g FROM game g LEFT JOIN FETCH g.category c WHERE c.name LIKE %:categoryName%",
+            value = "SELECT g FROM game g LEFT JOIN FETCH g.category c WHERE c.name LIKE %:categoryName% ORDER BY g.name ASC",
             countQuery = "SELECT COUNT(g) FROM game g LEFT JOIN g.category c WHERE c.name LIKE %:categoryName%"
     )
     Page<GameModel> findGamesPageableByCategoryName(String categoryName, Pageable pageable);
