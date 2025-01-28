@@ -28,10 +28,13 @@ public class CartItemController {
         var cart = this.cartService.getCartByIdFromUser(cartItemDTO.cartId(), cartItemDTO.userId());
         CartItemModel cartItem = cartItemService.getCartItemByCartIdAndGameId(cart.getCartId(), game.getGameId());
 
+        // Se o item não existir no carrinho, cria um novo
         if (cartItem == null) {
             cartItem = new CartItemModel(cartItemDTO.quantity(), cart, game);
             return this.cartItemService.createCartItem(cartItem);
         }
+
+        // Se o item já existir no carrinho, incrementa a quantidade
         cartItem.setQuantity(cartItem.getQuantity() + cartItemDTO.quantity());
         return this.cartItemService.updateCartItem(cartItem);
     }
