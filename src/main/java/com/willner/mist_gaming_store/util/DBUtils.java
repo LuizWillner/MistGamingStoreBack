@@ -77,7 +77,7 @@ public class DBUtils {
 
         game = new GameModel(
                 "Helldivers 2",
-                "https://i.pinimg.com/736x/92/6c/68/926c68381d15b099905a2fcdcd2243cd.jpg",
+                "https://assetsio.gnwcdn.com/co6jbi.jpg",
                 "https://www.youtube.com/embed/UC5EpJR0GBQ",
                 "For DEMOCRACY!",
                 "Arrow Head",
@@ -212,7 +212,7 @@ public class DBUtils {
 
         game = new GameModel(
                 "The Last of Us Part II",
-                "https://i.pinimg.com/736x/d0/6a/df/d06adf2e998ce7e9f3b69a272bfdb80d.jpg",
+                "https://cdn1.epicgames.com/offer/7713e3fa4b234e0d8f553044205d53b6/EGS_TheLastofUsPartIIRemastered_NaughtyDogLLCNixxesSoftwareIronGalaxy_S2_1200x1600-2e13755a6b3fec2ee9dbcc231a1cf39c",
                 "https://www.youtube.com/embed/W2Wnvvj33Wo?si=7TQ902rzADbeakTb",
                 "The Last of Us Part II é um jogo de ação-aventura desenvolvido pela Naughty Dog e publicado pela Sony Interactive Entertainment. É o segundo jogo da franquia e foi lançado em 19 de junho de 2020 exclusivamente para PlayStation 4.",
                 "Naughty Dog",
@@ -315,20 +315,20 @@ public class DBUtils {
         );
         this.gameRepository.save(game);
 
-        game = new GameModel(
-            "The Elder Scrolls V: Skyrim",
-            "https://cdn1.epicgames.com/offer/c8738a4d1ead40368eab9688b3c7d737/EGS_SkyrimSpecialEdition_BethesdaGameStudios_S2_1200x1600-ae5d13f6510e81460fe80aa1ca19cf4c",
-            "https://www.youtube.com/embed/JSRtYpNRoN0&t=8s",
-            "The Elder Scrolls V: Skyrim é um RPG eletrônico de ação desenvolvido pela Bethesda Game Studios e publicado pela Bethesda Softworks. É o quinto jogo principal da série The Elder Scrolls, seguindo The Elder Scrolls IV: Oblivion.",
-            "Bethesda Game Studios",
-            "Bethesda Softworks",
-            new BigDecimal("200.0"),
-            0.4,
-            LocalDate.of(2011, 11, 11),
-            100,
-            catRpgAcao
-        );
-        this.gameRepository.save(game);
+//        game = new GameModel(
+//            "The Elder Scrolls V: Skyrim",
+//            "https://cdn1.epicgames.com/offer/c8738a4d1ead40368eab9688b3c7d737/EGS_SkyrimSpecialEdition_BethesdaGameStudios_S2_1200x1600-ae5d13f6510e81460fe80aa1ca19cf4c",
+//            "https://www.youtube.com/embed/JSRtYpNRoN0&t=8s",
+//            "The Elder Scrolls V: Skyrim é um RPG eletrônico de ação desenvolvido pela Bethesda Game Studios e publicado pela Bethesda Softworks. É o quinto jogo principal da série The Elder Scrolls, seguindo The Elder Scrolls IV: Oblivion.",
+//            "Bethesda Game Studios",
+//            "Bethesda Softworks",
+//            new BigDecimal("200.0"),
+//            0.4,
+//            LocalDate.of(2011, 11, 11),
+//            100,
+//            catRpgAcao
+//        );
+//        this.gameRepository.save(game);
 
         game = new GameModel(
                 "EA Sports FC 25",
