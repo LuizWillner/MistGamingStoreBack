@@ -57,7 +57,25 @@ public class GameController {
         return gameService.getGamesByCategoryName(categoryName);
     }
 
-    @GetMapping("pageable/category/")   // GET http://localhost:8080/game/pageable?page=0&size=5&categoryName=Ação e Aventura
+    @GetMapping("pageable")  // GET http://localhost:8080/game/pageable?page=0&size=3&name=Cyberpunk
+    public ResultadoPaginado<GameModel> getGamesPageable(
+            @RequestParam(name= "page", defaultValue = "0") int page,
+            @RequestParam(name= "size", defaultValue = "3") int size,
+            @RequestParam(name="name", defaultValue = "") String name
+    ) {
+        Pageable pageable = PageRequest.of(page, size);
+        Page<GameModel> paginaDeProduto = gameService.getGamesPageable(name, pageable);
+        ResultadoPaginado<GameModel> resultadoPaginado = new ResultadoPaginado<>(
+                paginaDeProduto.getTotalElements(),
+                paginaDeProduto.getTotalPages(),
+                paginaDeProduto.getNumber(),
+                paginaDeProduto.getContent()
+        );
+        return resultadoPaginado;
+    }
+
+
+    @GetMapping("pageable/category/")   // GET http://localhost:8080/game/pageable/category?page=0&size=5&categoryId=1
     public ResultadoPaginado<GameModel> getGamesPageableByCategoryId(
             @RequestParam(name= "page", defaultValue = "0") int page,
             @RequestParam(name= "size", defaultValue = "3") int size,
@@ -74,7 +92,7 @@ public class GameController {
         return resultadoPaginado;
     }
 
-    @GetMapping("pageable/category/name")   // GET http://localhost:8080/game/pageable?page=0&size=5&categoryName=Ação e Aventura
+    @GetMapping("pageable/category/name")   // GET http://localhost:8080/game/pageable/category/name?page=0&size=5&categoryName=Ação e Aventura
     public ResultadoPaginado<GameModel> getGamesPageableByCategoryName(
             @RequestParam(name= "page", defaultValue = "0") int page,
             @RequestParam(name= "size", defaultValue = "3") int size,
@@ -91,7 +109,7 @@ public class GameController {
         return resultadoPaginado;
     }
 
-    @GetMapping("pageable/releaseDate")   // GET http://localhost:8080/game/pageable?page=0&size=5
+    @GetMapping("pageable/releaseDate")   // GET http://localhost:8080/game/pageable/releaseDate?page=0&size=5
     public ResultadoPaginado<GameModel> getGamesPageableByReleaseDate(
             @RequestParam(name= "page", defaultValue = "0") int page,
             @RequestParam(name= "size", defaultValue = "3") int size,

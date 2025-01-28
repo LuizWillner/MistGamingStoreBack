@@ -44,6 +44,10 @@ public class GameService {
         return gameRepository.findByCategoryId(category.getCategoryId());
     }
 
+    public Page<GameModel> getGamesPageable(String name, Pageable pageable) {
+        return gameRepository.findGamesPageable(name, pageable);
+    }
+
     public Page<GameModel> getGamesPageableByCategoryId(int categoryId, Pageable pageable) {
         return gameRepository.findGamesPageableByCategoryId(categoryId, pageable);
     }
