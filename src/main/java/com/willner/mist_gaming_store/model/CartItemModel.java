@@ -49,7 +49,10 @@ public class CartItemModel {
     }
 
     public Double getCartItemPrice() {
-        BigDecimal bigDecimalItemPrice = BigDecimal.valueOf(this.quantity).multiply(this.game.getPrice());
+        // quantity * game.getDiscountPrice()
+        BigDecimal bigDecimalItemPrice = BigDecimal.valueOf(this.quantity).multiply(
+                this.game.getDiscountPrice()
+        );
         return bigDecimalItemPrice.doubleValue();
     }
 }

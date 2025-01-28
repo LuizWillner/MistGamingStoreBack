@@ -92,4 +92,12 @@ public class GameModel {  //TODO: Ingresso, Produto
         this.stockQuantity = stockQuantity;
         this.category = category;
     }
+
+    public BigDecimal getDiscountPrice() {
+        // game.price * (1 - game.discount)
+        BigDecimal bigDecimalDiscountPrice = this.price.multiply(
+                BigDecimal.valueOf(1).subtract(BigDecimal.valueOf(this.discount))
+        );
+        return bigDecimalDiscountPrice;
+    }
 }
