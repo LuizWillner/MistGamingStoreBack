@@ -68,7 +68,7 @@ public class DBUtils {
                 "Larian Studios",
                 "Larian Studios",
                 new BigDecimal("200.0"),
-                0.8,
+                0.2,
                 LocalDate.of(2023, 8, 3),
                 50,
                 catCrpg
@@ -83,7 +83,7 @@ public class DBUtils {
                 "Arrow Head",
                 "Sony Interactive Entertainment",
                 new BigDecimal("200.0"),
-                1.0,
+                0.0,
                 LocalDate.of(2024, 2, 8),
                 100,
                 catCoop
@@ -113,7 +113,7 @@ public class DBUtils {
                 "Riot Games",
                 "Riot Games",
                 new BigDecimal("0.0"),
-                1.0,
+                0.0,
                 LocalDate.of(2009, 10, 27),
                 1000000,
                 catMoba
@@ -128,7 +128,7 @@ public class DBUtils {
                 "Blizzard",
                 "Blizzard",
                 new BigDecimal("0.0"),
-                1.0,
+                0.0,
                 LocalDate.of(2013, 7, 9),
                 1000000,
                 catMoba
@@ -137,13 +137,13 @@ public class DBUtils {
 
         game = new GameModel(
                 "God of War",
-                "https://c4.wallpaperflare.com/wallpaper/208/228/959/soufiane-idrassi-digital-art-god-of-war-4-tattoo-wallpaper-preview.jpg",
+                "https://cdn1.epicgames.com/offer/3ddd6a590da64e3686042d108968a6b2/EGS_GodofWar_SantaMonicaStudio_S2_1200x1600-fbdf3cbc2980749091d52751ffabb7b7_1200x1600-fbdf3cbc2980749091d52751ffabb7b7",
                 "https://www.youtube.com/embed/FyIwEFXOcaE?si=ZcNyIx0vbLfw7tej",
                 "God of War é um jogo de ação-aventura desenvolvido pela Santa Monica Studio e publicado pela Sony Interactive Entertainment. Foi lançado em 20 de abril de 2018 para PlayStation 4 e em 14 de janeiro de 2022 para Microsoft Windows.",
                 "Santa Monica Studios",
                 "Sony Interactive Entertainment",
                 new BigDecimal("200.0"),
-                0.6,
+                0.4,
                 LocalDate.of(2018, 4, 20),
                 100,
                 catAcaoEAventura
@@ -158,7 +158,7 @@ public class DBUtils {
                 "Naughty Dog",
                 "Sony Interactive Entertainment",
                 new BigDecimal("230.0"),
-                1.0,
+                0.0,
                 LocalDate.of(2022, 9, 2),
                 100,
                 catAcaoEAventura
@@ -188,7 +188,7 @@ public class DBUtils {
                 "Naughty Dog",
                 "Sony Interactive Entertainment",
                 new BigDecimal("200.0"),
-                0.75,
+                0.25,
                 LocalDate.of(2016, 5, 10),
                 100,
                 catAcaoEAventura
@@ -203,7 +203,7 @@ public class DBUtils {
                 "Sucker Punch Productions",
                 "Sony Interactive Entertainment",
                 new BigDecimal("200.0"),
-                1.0,
+                0.0,
                 LocalDate.of(2020, 7, 17),
                 100,
                 catMundoAberto
@@ -218,7 +218,7 @@ public class DBUtils {
                 "Naughty Dog",
                 "Sony Interactive Entertainment",
                 new BigDecimal("200.0"),
-                1.0,
+                0.0,
                 LocalDate.of(2020, 6, 19),
                 100,
                 catAcaoEAventura
@@ -227,13 +227,13 @@ public class DBUtils {
 
         game = new GameModel(
                 "God of War: Ragnarok",
-                "https://i.pinimg.com/736x/fc/ba/0c/fcba0cb1142be0619a63f960c84d904b.jpg",
+                "https://cdn1.epicgames.com/spt-assets/edaff839f0734d16bc89d2ddb1dc9339/steel-magnolia-xbf3x.jpg",
                 "https://www.youtube.com/embed/hfJ4Km46A-0",
                 "God of War Ragnarök é um jogo de ação-aventura desenvolvido pela Santa Monica Studio e publicado pela Sony Interactive Entertainment. Foi lançado em 9 de novembro de 2022 para PlayStation 4 e PlayStation 5. Uma versão foi lançado para o Windows em 19 de setembro de 2024.",
                 "Santa Monica Studios",
                 "Sony Interactive Entertainment",
                 new BigDecimal("230.0"),
-                1.0,
+                0.0,
                 LocalDate.of(2024, 9, 19),
                 100,
                 catAcaoEAventura
@@ -242,13 +242,13 @@ public class DBUtils {
 
         game = new GameModel(
                 "Star Wars: Knights of The Old Republic",
-                "https://static.wikia.nocookie.net/ptstarwars/images/5/51/Knightsoftheoldrepublic_capa.png/revision/latest?cb=20130107000535",
+                "https://static.wikia.nocookie.net/ptstarwars/images/5/51/Knightsoftheoldrepublic_capa.png",
                 "https://www.youtube.com/embed/aw9RaACjZmM",
                 "Star Wars: Cavaleiros da Velha República é um RPG desenvolvido pela Bioware e publicado pela LucasArts. A história do jogo começa quatro mil anos antes da ascensão do império galático (período referente a história dos filmes clássicos), quando o Ex-jedi Darth Malak e seu aprendiz Darth Revan lideram um ataque contra a República trazendo toda a Armada Sith para uma guerra contra os Jedis.",
                 "Bioware",
                 "LucasArts",
                 new BigDecimal("25.0"),
-                1.0,
+                0.0,
                 LocalDate.of(2003, 7, 15),
                 100,
                 catCrpg
@@ -257,13 +257,13 @@ public class DBUtils {
 
         game = new GameModel(
                 "Counter-Strike: Global Offensive",
-                "https://static.wikia.nocookie.net/counterstrike/images/1/1e/Csgo_steam_store_header_latest.jpg/revision/latest?cb=20190621081933&path-prefix=tr",
+                "https://vortexcultural.com.br/images/2012/10/Counter-Strike-Global-Offensive.jpg",
                 "https://www.youtube.com/embed/edYCtaNueQY",
                 "Counter-Strike: Global Offensive é um jogo de tiro em primeira pessoa online desenvolvido pela Valve Corporation. É o quarto jogo principal da série Counter-Strike e foi lançado para Microsoft Windows, OS X, Xbox 360 e PlayStation 3 em 21 de agosto de 2012.",
                 "Valve Corporation",
                 "Valve Corporation",
                 new BigDecimal("0.0"),
-                1.0,
+                0.0,
                 LocalDate.of(2012, 8, 21),
                 1000000,
                 catFps
@@ -278,7 +278,7 @@ public class DBUtils {
                 "Riot Games",
                 "Riot Games",
                 new BigDecimal("0.0"),
-                1.0,
+                0.0,
                 LocalDate.of(2020, 6, 2),
                 1000000,
                 catHeroShooter
@@ -293,7 +293,7 @@ public class DBUtils {
                 "NetEase Games",
                 "NetEase Games",
                 new BigDecimal("0.0"),
-                1.0,
+                0.0,
                 LocalDate.of(2024, 12, 5),
                 1000000,
                 catHeroShooter
@@ -308,7 +308,7 @@ public class DBUtils {
             "CD Projekt Red",
             "CD Projekt Red",
             new BigDecimal("200.0"),
-            1.0,
+            0.0,
             LocalDate.of(2020, 12, 9),
             100,
             catMundoAberto
@@ -323,7 +323,7 @@ public class DBUtils {
             "Bethesda Game Studios",
             "Bethesda Softworks",
             new BigDecimal("200.0"),
-            0.6,
+            0.4,
             LocalDate.of(2011, 11, 11),
             100,
             catRpgAcao
@@ -338,7 +338,7 @@ public class DBUtils {
                 "EA Canada & EA Romania",
                 "EA Sports",
                 new BigDecimal("300.0"),
-                1.0,
+                0.0,
                 LocalDate.of(2024, 9, 27),
                 100,
                 catEsportes
@@ -353,7 +353,7 @@ public class DBUtils {
                 "Blizzard",
                 "Blizzard",
                 new BigDecimal("0.0"),
-                1.0,
+                0.0,
                 LocalDate.of(2004, 11, 23),
                 1000000,
                 catMmorpg
@@ -368,7 +368,7 @@ public class DBUtils {
                 "Rockstar Games",
                 "Rockstar Games",
                 new BigDecimal("200.0"),
-                1.0,
+                0.0,
                 LocalDate.of(2018, 10, 26),
                 100,
                 catMundoAberto
@@ -383,7 +383,7 @@ public class DBUtils {
                 "FromSoftware",
                 "Bandai Namco Entertainment",
                 new BigDecimal("100.0"),
-                1.0,
+                0.0,
                 LocalDate.of(2016, 3, 24),
                 100,
                 catSoulsLike
@@ -398,7 +398,7 @@ public class DBUtils {
                 "FromSoftware",
                 "Sony Interactive Entertainment",
                 new BigDecimal("150.0"),
-                1.0,
+                0.0,
                 LocalDate.of(2015, 3, 24),
                 100,
                 catSoulsLike
@@ -413,7 +413,7 @@ public class DBUtils {
                 "FromSoftware",
                 "Activision",
                 new BigDecimal("200.0"),
-               1.0,
+                0.0,
                 LocalDate.of(2019, 3, 21),
                 100,
                 catSoulsLike
@@ -428,7 +428,7 @@ public class DBUtils {
                 "FromSoftware",
                 "Bandai Namco Entertainment",
                 new BigDecimal("250.0"),
-                1.0,
+                0.0,
                 LocalDate.of(2022, 2, 24),
                 100,
                 catSoulsLike
