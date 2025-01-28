@@ -1,9 +1,6 @@
 package com.willner.mist_gaming_store.util;
 
-import com.willner.mist_gaming_store.model.CartModel;
-import com.willner.mist_gaming_store.model.CategoryModel;
-import com.willner.mist_gaming_store.model.GameModel;
-import com.willner.mist_gaming_store.model.UserModel;
+import com.willner.mist_gaming_store.model.*;
 import com.willner.mist_gaming_store.repository.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -164,6 +161,8 @@ public class DBUtils {
                 catAcaoEAventura
         );
         this.gameRepository.save(game);
+        CartItemModel cartItem = new CartItemModel(3, cart, game);
+        this.cartItemRepository.save(cartItem);
 
         game = new GameModel(
                 "The Witcher 3",
@@ -179,6 +178,8 @@ public class DBUtils {
                 catRpgAcao
         );
         this.gameRepository.save(game);
+        cartItem = new CartItemModel(1, cart, game);
+        this.cartItemRepository.save(cartItem);
 
         game = new GameModel(
                 "Uncharted 4",
@@ -299,6 +300,8 @@ public class DBUtils {
                 catHeroShooter
         );
         this.gameRepository.save(game);
+        cartItem = new CartItemModel(1, cart, game);
+        this.cartItemRepository.save(cartItem);
 
         game = new GameModel(
             "Cyberpunk 2077",
