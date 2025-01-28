@@ -2,9 +2,7 @@ package com.willner.mist_gaming_store.service;
 
 import com.willner.mist_gaming_store.exception.TransientEntityException;
 import com.willner.mist_gaming_store.model.CartItemModel;
-import com.willner.mist_gaming_store.model.CategoryModel;
 import com.willner.mist_gaming_store.repository.ICartItemRepository;
-import com.willner.mist_gaming_store.repository.ICategoryRepository;
 import jakarta.persistence.EntityNotFoundException;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,10 +18,10 @@ public class CartItemService {
         return this.cartItemRepository.save(cartItem);
     }
 
-    public CartItemModel getCartItemByIdFromCart(Long cartItemId, Long cartId) {
-        return cartItemRepository.findByIdAndCartId(cartItemId, cartId)
+    public CartItemModel getCartItemById(Long cartItemId) {
+        return cartItemRepository.findById(cartItemId)
                 .orElseThrow(() -> new EntityNotFoundException(
-                        "Item de carrinho número " + cartItemId + " não encontrado no carrinho."));
+                        "Item de carrinho número " + cartItemId + " não encontrado."));
     }
 
     @Transactional

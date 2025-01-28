@@ -42,13 +42,12 @@ public class CartItemController {
         return cartItemService.updateCartItem(cartItem);
     }
 
-    // Remover produto do carrinho
-    @DeleteMapping  // DELETE http://localhost:8080/user/cart/item?cartId=1&cartItemId=1
-    public CartItemModel deleteCartItemFromCart(
-            @RequestParam(name= "cartId") Long cartId,
-            @RequestParam(name= "cartItemId") Long cartItemId
+    // Remover item carrinho
+    @DeleteMapping("{cartItemId}")  // DELETE http://localhost:8080/user/cart/item/1
+    public CartItemModel deleteCartItem(
+            @PathVariable(name= "cartItemId") Long cartItemId
     ) {
-        CartItemModel cartItem = cartItemService.getCartItemByIdFromCart(cartItemId, cartId);
+        CartItemModel cartItem = cartItemService.getCartItemById(cartItemId);
         cartItemService.deleteCartItem(cartItemId);
         return cartItem;
     }
