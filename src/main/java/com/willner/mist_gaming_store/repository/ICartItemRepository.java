@@ -13,6 +13,9 @@ public interface ICartItemRepository extends JpaRepository<CartItemModel, Long> 
     @Query("select ci from cart_item ci where ci.cartItemId = :cartItemId AND ci.cart.cartId = :cartId")
     Optional<CartItemModel> findByIdAndCartId(Long cartItemId, Long cartId);
 
+    @Query("select ci from cart_item ci where ci.cart.cartId = :cartId AND ci.game.gameId = :gameId")
+    CartItemModel findByCartIdAndGameId(Long cartId, Long gameId);
+
     @Modifying  // Por alguma razão, tive que redefinir o deleteById pois o original não funcionava
     @Query("delete from cart_item ci where ci.cartItemId = :cartItemId")
     void deleteById(Long cartItemId);

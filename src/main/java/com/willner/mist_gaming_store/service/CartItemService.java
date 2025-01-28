@@ -24,6 +24,10 @@ public class CartItemService {
                         "Item de carrinho número " + cartItemId + " não encontrado."));
     }
 
+    public CartItemModel getCartItemByCartIdAndGameId(Long cartId, Long gameId) {
+        return cartItemRepository.findByCartIdAndGameId(cartId, gameId);
+    }
+
     @Transactional
     public CartItemModel updateCartItem(CartItemModel cartItem) {
         if (cartItem.getCartItemId() != null) {

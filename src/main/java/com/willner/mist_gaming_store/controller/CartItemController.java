@@ -26,8 +26,14 @@ public class CartItemController {
     public CartItemModel createCartItem(@RequestBody CartItemDTO cartItemDTO) {
         var game = this.gameService.findGameById(cartItemDTO.gameId());
         var cart = this.cartService.getCartByIdFromUser(cartItemDTO.cartId(), cartItemDTO.userId());
-        CartItemModel cartItem = new CartItemModel(cartItemDTO.quantity(), cart, game);
-        return this.cartItemService.createCartItem(cartItem);
+        CartItemModel cartItem = cartItemService.getCartItemByCartIdAndGameId(cart.getCartId(), game.getGameId());
+
+        if (cartItem == null) {
+            cartItem = new CartItemModel(cartItemDTO.quantity(), cart, game);
+            return this.cartItemService.createCartItem(cartItem);
+        }
+        cartItem.setQuantity(cartItem.getQuantity() + cartItemDTO.quantity());
+        return this.cartItemService.updateCartItem(cartItem);
     }
 
     // Alterar quantidade de um produto no carrinho
