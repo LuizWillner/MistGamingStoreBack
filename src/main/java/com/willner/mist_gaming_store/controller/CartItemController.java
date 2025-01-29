@@ -49,7 +49,8 @@ public class CartItemController {
     @DeleteMapping("{cartItemId}")  // DELETE http://localhost:8080/user/cart/item/1
     public CartItemModel deleteCartItem(
             @PathVariable(name= "cartItemId") Long cartItemId
-    ) {
+    ) throws InterruptedException {
+        Thread.sleep(1000);  // simulando atraso de conexão para testar spinner
         CartItemModel cartItem = cartItemService.getCartItemById(cartItemId);
         cartItemService.deleteCartItem(cartItemId);
         return cartItem;

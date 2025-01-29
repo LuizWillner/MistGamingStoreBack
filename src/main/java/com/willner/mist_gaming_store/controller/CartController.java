@@ -21,6 +21,28 @@ public class CartController {
     @Autowired
     private CartItemService cartItemService;
 
+    @PostMapping  // POST http://localhost:8080/user/cart?cartId=1&userId=1
+    public CartModel buyCart(
+        @RequestParam(name = "cartId") Long cartId,
+        @RequestParam(name = "userId") Long userId
+    ){
+        System.out.println("============== Iniciando compra!! ==============");
+        CartModel cart = cartService.getCartByIdFromUser(cartId, userId);
+        cart.getCartItems().forEach(cartItem -> {
+            GameModel game = cartItem.getGame();
+            if (game.getStockQuantity() < cartItem.getQuantity()) {
+                throw new InsuficientStockException(
+                        "Quantidade insuficiente em estoque para o jogo " + game.getName()
+                );
+            }
+            game.setStockQuantity(game.getStockQuantity() - cartItem.getQuantity());
+            gameService.updateGame(game);
+            cartItemService.deleteCartItem(cartItem.getCartItemId());
+        });
+        System.out.println("============== Compra finalizada! ==============");
+        return cart;
+    }
+
     @GetMapping  // GET http://localhost:8080/user/cart?cartId=1&userId=1
     public CartModel getCartByIdFromUser(
             @RequestParam(name = "cartId") Long cartId,
@@ -42,6 +64,7 @@ public class CartController {
             @RequestParam(name = "cartId") Long cartId,
             @RequestParam(name = "userId") Long userId
     ) {
+        System.out.println("============== Iniciando compra!! ==============");
         CartModel cart = cartService.getCartByIdFromUser(cartId, userId);
         cart.getCartItems().forEach(cartItem -> {
             GameModel game = cartItem.getGame();
@@ -54,6 +77,7 @@ public class CartController {
             gameService.updateGame(game);
             cartItemService.deleteCartItem(cartItem.getCartItemId());
         });
+        System.out.println("============== Compra finalizada! ==============");
         return cart;
     }
 
@@ -62,6 +86,7 @@ public class CartController {
             @RequestParam(name = "cartId") Long cartId,
             @RequestParam(name = "userId") Long userId
     ) {
+
         CartModel cart = cartService.getCartByIdFromUser(cartId, userId);
         cartService.deleteCart(cartId);
         return cart;
