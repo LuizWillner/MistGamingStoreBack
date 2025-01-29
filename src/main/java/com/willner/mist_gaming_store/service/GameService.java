@@ -8,6 +8,7 @@ import jakarta.persistence.EntityNotFoundException;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
+import org.springframework.data.jpa.domain.JpaSort;
 import org.springframework.stereotype.Service;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -47,12 +48,17 @@ public class GameService {
     }
 
     public Page<GameModel> getGamesPageable(String name, String sort, String order, Pageable pageable) {
-        Sort sortOrder = Sort.by(
-                Sort.Direction.fromString(order),
-                sort.equals("category") ? "category.name" : sort
-        );
+        Sort sortOrder;
+        if ("discountPrice".equals(sort)) {
+            sortOrder = JpaSort.unsafe(Sort.Direction.fromString(order), "g.price * (1 - g.discount)");
+        } else if ("category".equals(sort)) {
+            sortOrder = Sort.by(Sort.Direction.fromString(order), "category.name");
+        } else {
+            sortOrder = Sort.by(Sort.Direction.fromString(order), sort);
+        }
         Pageable sortedPageable = PageRequest.of(pageable.getPageNumber(), pageable.getPageSize(), sortOrder);
         return gameRepository.findGamesPageable(name, sortedPageable);
+
     }
 
     public Page<GameModel> getGamesPageableByCategoryId(int categoryId, Pageable pageable) {
