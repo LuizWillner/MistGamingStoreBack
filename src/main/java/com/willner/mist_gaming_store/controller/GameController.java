@@ -61,10 +61,12 @@ public class GameController {
     public ResultadoPaginado<GameModel> getGamesPageable(
             @RequestParam(name= "page", defaultValue = "0") int page,
             @RequestParam(name= "size", defaultValue = "3") int size,
-            @RequestParam(name="name", defaultValue = "") String name
+            @RequestParam(name="name", defaultValue = "") String name,
+            @RequestParam(name="sort", defaultValue = "name") String sort,
+            @RequestParam(name="order", defaultValue = "asc") String order
     ) {
         Pageable pageable = PageRequest.of(page, size);
-        Page<GameModel> paginaDeProduto = gameService.getGamesPageable(name, pageable);
+        Page<GameModel> paginaDeProduto = gameService.getGamesPageable(name, sort, order, pageable);
         ResultadoPaginado<GameModel> resultadoPaginado = new ResultadoPaginado<>(
                 paginaDeProduto.getTotalElements(),
                 paginaDeProduto.getTotalPages(),
@@ -151,7 +153,8 @@ public class GameController {
     }
 
     @DeleteMapping("{gameId}")  // DELETE http://localhost:8080/game/1
-    public GameModel deleteGame(@PathVariable("gameId") Long gameId) {
+    public GameModel deleteGame(@PathVariable("gameId") Long gameId) throws InterruptedException  {
+        Thread.sleep(1000);  // simulando atraso na conexão para spinner no front
         GameModel game = gameService.findGameById(gameId);
         gameService.deleteGame(gameId);
         return game;

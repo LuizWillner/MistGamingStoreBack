@@ -7,9 +7,11 @@ import com.willner.mist_gaming_store.repository.IGameRepository;
 import jakarta.persistence.EntityNotFoundException;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -44,8 +46,13 @@ public class GameService {
         return gameRepository.findByCategoryId(category.getCategoryId());
     }
 
-    public Page<GameModel> getGamesPageable(String name, Pageable pageable) {
-        return gameRepository.findGamesPageable(name, pageable);
+    public Page<GameModel> getGamesPageable(String name, String sort, String order, Pageable pageable) {
+        Sort sortOrder = Sort.by(
+                Sort.Direction.fromString(order),
+                sort.equals("category") ? "category.name" : sort
+        );
+        Pageable sortedPageable = PageRequest.of(pageable.getPageNumber(), pageable.getPageSize(), sortOrder);
+        return gameRepository.findGamesPageable(name, sortedPageable);
     }
 
     public Page<GameModel> getGamesPageableByCategoryId(int categoryId, Pageable pageable) {

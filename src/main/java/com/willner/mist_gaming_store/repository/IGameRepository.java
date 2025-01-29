@@ -5,6 +5,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.repository.query.Param;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -22,7 +23,7 @@ public interface IGameRepository extends JpaRepository<GameModel, Long> {
     List<GameModel> findByCategoryId(Long categoryId);
 
     @Query(
-            value = "SELECT g FROM game g LEFT JOIN FETCH g.category c WHERE g.name LIKE %:name% ORDER BY g.name ASC",
+            value = "SELECT g FROM game g LEFT JOIN FETCH g.category c WHERE g.name LIKE %:name%",
             countQuery = "SELECT COUNT(g) FROM game g LEFT JOIN g.category c WHERE g.name LIKE %:name%"
     )
     Page<GameModel> findGamesPageable(String name, Pageable pageable);
