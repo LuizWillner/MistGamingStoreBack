@@ -336,7 +336,7 @@ public class DBUtils {
         game = new GameModel(
                 "EA Sports FC 25",
                 "https://cdn1.epicgames.com/offer/b61e8ddd14e94619b7a74cf9d73f86b5/EGS_EASPORTSFC25StandardEdition_EACanada_S2_1200x1600-6e6b5c1d5d30e15b1dbdde721c6bc544",
-                "https://www.youtube.com/embed/JSRtYpNRoN0",
+                "https://www.youtube.com/embed/pBM2xyco_Kg?si=B0JmAU39z9TQ9eCZ",
                 "EA Sports FC 25 é um jogo de futebol desenvolvido pela EA Sports. O jogo é uma simulação de futebol e é o 25º título da série EA Sports FC.",
                 "EA Canada & EA Romania",
                 "EA Sports",
